@@ -1,0 +1,35 @@
+{
+	"QMainWindow":[
+		{
+			"tittle":"Библиотека",
+			"icon":":/Icons/For_QT/book.svg",
+			"frameless": true,
+			"transluscentBg": true,
+			"sizeGrip": "size_grip",
+			"shadow":[
+				{
+					"color": "#fff",
+					"blurRadius": 20,
+					"xOffset": 0,
+					"yOffset": 0,
+					"centralWidget": "central_widget"
+				}
+			],
+			"navigation":[
+				{
+					"minimize":"min_btn",
+					"close": "close_btn",
+					"restore":[
+						{
+							"buttonName": "max_btn",
+							"normalIcon": ":/Icons/For_QT/maximize.svg",
+							"maximizedIcon": ":/icons/icons/minimize-2.svg"
+						}
+					],
+					"moveWindow": "title_bar",
+					"tittleBar": "title_bar"
+				}
+			]
+		}
+	]
+}
