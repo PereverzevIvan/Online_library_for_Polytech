@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>990</width>
-    <height>268</height>
+    <width>743</width>
+    <height>223</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>989</width>
-    <height>241</height>
+    <width>743</width>
+    <height>223</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>16777215</width>
+    <width>1234556</width>
     <height>300</height>
    </size>
   </property>
@@ -30,7 +30,7 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-size: 18px;
+	font-size: 14px;
 	outline: none;
 }
 
@@ -44,8 +44,8 @@ QFrame {
 }
 
 #image_container {
-	width: 5em;
-	height: 5em;
+	width: 1rem;
+	height: 1rem;
 	background-color: rgb(76,79,86);
 	border-radius: 10%;
 }
@@ -56,11 +56,10 @@ QLabel {
 }
 
 #heading_label {
-	font-size: 22px;
+	font-size: 18px;
 	font-weight: 500;
 }
 
-/* Buttons style */
 /* Buttons style */
 QPushButton {
 	background: rgba(254,211,44,255);
@@ -94,18 +93,24 @@ QPushButton:pressed {
    <item>
     <widget class="QWidget" name="main_body" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
-      <item alignment="Qt::AlignLeft">
+      <item>
        <widget class="QWidget" name="image_container" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
-          <width>250</width>
-          <height>250</height>
+          <width>200</width>
+          <height>200</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>400</width>
-          <height>400</height>
+          <width>200</width>
+          <height>200</height>
          </size>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -125,7 +130,7 @@ QPushButton:pressed {
           <number>0</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_2">
+          <widget class="QLabel" name="image">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -183,7 +188,7 @@ QPushButton:pressed {
           <number>0</number>
          </property>
          <property name="bottomMargin">
-          <number>10</number>
+          <number>0</number>
          </property>
          <item>
           <widget class="QFrame" name="frame_5">
@@ -273,7 +278,7 @@ QPushButton:pressed {
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_6">
+             <widget class="QLabel" name="year_label">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -324,12 +329,12 @@ QPushButton:pressed {
                </sizepolicy>
               </property>
               <property name="text">
-               <string>Тип издания:</string>
+               <string>Вид издания:</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_10">
+             <widget class="QLabel" name="type_label">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -385,7 +390,7 @@ QPushButton:pressed {
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_8">
+             <widget class="QLabel" name="pages_label">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -441,7 +446,7 @@ QPushButton:pressed {
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_3">
+             <widget class="QLabel" name="authors_label">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -500,7 +505,7 @@ QPushButton:pressed {
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="open_here_btn">
            <property name="cursor">
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
@@ -508,7 +513,7 @@ QPushButton:pressed {
             <string> Отрыть</string>
            </property>
            <property name="icon">
-            <iconset resource="resources.qrc">
+            <iconset resource="../resources.qrc">
              <normaloff>:/Icons/For_QT/external-link.svg</normaloff>:/Icons/For_QT/external-link.svg</iconset>
            </property>
            <property name="iconSize">
@@ -520,7 +525,7 @@ QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="open_btn">
+          <widget class="QPushButton" name="open_library_btn">
            <property name="cursor">
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
@@ -528,7 +533,7 @@ QPushButton:pressed {
             <string>  В библиотеку</string>
            </property>
            <property name="icon">
-            <iconset resource="resources.qrc">
+            <iconset resource="../resources.qrc">
              <normaloff>:/Icons/For_QT/book-open.svg</normaloff>:/Icons/For_QT/book-open.svg</iconset>
            </property>
            <property name="iconSize">
@@ -561,7 +566,7 @@ QPushButton:pressed {
   </layout>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections/>
 </ui>

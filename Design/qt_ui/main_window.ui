@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>main_window</class>
+ <widget class="QMainWindow" name="main_window">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1175</width>
-    <height>720</height>
+    <width>860</width>
+    <height>665</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">/* General */
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="central_widget">
+   <property name="minimumSize">
+    <size>
+     <width>860</width>
+     <height>665</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* General */
 * {
 	margin: 0;
 	padding: 0;
-	font-size: 18px;
+	font-size: 16px;
 	outline: none;
 	font-family: &quot;Arial&quot;;
 }
@@ -29,7 +39,7 @@ QFrame {
 
 #main_body {
 	background-color: rgba(32,36,42,255);
-	border_radius: 10%;
+	border-radius: 10%;
 }
 
 #search_background, #ex_search_background, #sort_background {
@@ -180,6 +190,8 @@ QScrollArea, #scroll_area_container {
 /* TitleBar style */
 #title_bar {
 	background-color: rgb(76,79,86);
+	border-top-left-radius: 10%;
+	border-top-right-radius: 10%;
 }
 
 #window_title {
@@ -251,16 +263,6 @@ QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 	background: none;
 }</string>
-  </property>
-  <widget class="QWidget" name="central_widget">
-   <property name="minimumSize">
-    <size>
-     <width>1083</width>
-     <height>663</height>
-    </size>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="leftMargin">
@@ -277,9 +279,12 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     </property>
     <item>
      <widget class="QWidget" name="main_body" native="true">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="spacing">
-        <number>10</number>
+        <number>0</number>
        </property>
        <property name="leftMargin">
         <number>0</number>
@@ -341,7 +346,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="resources.qrc">:/Icons/For_QT/book.svg</pixmap>
+                <pixmap resource="../resources.qrc">:/Icons/For_QT/book.svg</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>false</bool>
@@ -431,7 +436,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="resources.qrc">
+                <iconset resource="../resources.qrc">
                  <normaloff>:/Icons/For_QT/minus.svg</normaloff>:/Icons/For_QT/minus.svg</iconset>
                </property>
                <property name="iconSize">
@@ -451,7 +456,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="resources.qrc">
+                <iconset resource="../resources.qrc">
                  <normaloff>:/Icons/For_QT/maximize-2.svg</normaloff>:/Icons/For_QT/maximize-2.svg</iconset>
                </property>
                <property name="iconSize">
@@ -471,7 +476,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="resources.qrc">
+                <iconset resource="../resources.qrc">
                  <normaloff>:/Icons/For_QT/x.svg</normaloff>:/Icons/For_QT/x.svg</iconset>
                </property>
                <property name="iconSize">
@@ -614,7 +619,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                        <string> Найти</string>
                       </property>
                       <property name="icon">
-                       <iconset resource="resources.qrc">
+                       <iconset resource="../resources.qrc">
                         <normaloff>:/Icons/For_QT/search.svg</normaloff>:/Icons/For_QT/search.svg</iconset>
                       </property>
                       <property name="iconSize">
@@ -767,7 +772,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                           <string>  Задать параметры</string>
                          </property>
                          <property name="icon">
-                          <iconset resource="resources.qrc">
+                          <iconset resource="../resources.qrc">
                            <normaloff>:/Icons/For_QT/settings.svg</normaloff>:/Icons/For_QT/settings.svg</iconset>
                          </property>
                          <property name="iconSize">
@@ -787,7 +792,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                           <string> Найти</string>
                          </property>
                          <property name="icon">
-                          <iconset resource="resources.qrc">
+                          <iconset resource="../resources.qrc">
                            <normaloff>:/Icons/For_QT/search.svg</normaloff>:/Icons/For_QT/search.svg</iconset>
                          </property>
                          <property name="iconSize">
@@ -897,41 +902,6 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                            <string>Выберите параметр сортировки</string>
                           </property>
                          </item>
-                         <item>
-                          <property name="text">
-                           <string>1</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>2</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>3</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>4</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>5</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>6</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text">
-                           <string>7</string>
-                          </property>
-                         </item>
                         </widget>
                        </item>
                       </layout>
@@ -965,7 +935,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                        <string> Сортировать</string>
                       </property>
                       <property name="icon">
-                       <iconset resource="resources.qrc">
+                       <iconset resource="../resources.qrc">
                         <normaloff>:/Icons/For_QT/bar-chart.svg</normaloff>:/Icons/For_QT/bar-chart.svg</iconset>
                       </property>
                       <property name="iconSize">
@@ -1045,8 +1015,8 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>1145</width>
-                  <height>424</height>
+                  <width>830</width>
+                  <height>372</height>
                  </rect>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -1115,14 +1085,40 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
          </layout>
         </widget>
        </item>
+       <item alignment="Qt::AlignRight">
+        <widget class="QFrame" name="size_grip">
+         <property name="minimumSize">
+          <size>
+           <width>10</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>10</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+        </widget>
+       </item>
       </layout>
+      <zorder>widget</zorder>
+      <zorder>title_bar</zorder>
+      <zorder>size_grip</zorder>
      </widget>
     </item>
    </layout>
   </widget>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections/>
 </ui>

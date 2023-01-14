@@ -1,3 +1,4 @@
+# -* coding: utf-8 *-
 import os
 import re
 
@@ -12,9 +13,11 @@ def generate_all_ui2py(path: str):
 
     for it in ui_list:
         file_path = os.path.join(path, it)
+        file_name = file_path.split(os.sep)[-1]
         file_name_without_extension = file_path.split(os.sep)[-1].removesuffix('.ui')
-        cmd = f'pyside6-uic {file_path} > {path}{os.sep}{file_name_without_extension}.py'
-        os.popen(cmd)
+        cmd = f"pyside6-uic 'E:/Projects on Python/Online_library_for_Polytech/Design/qt_ui/{file_name}' " \
+              f"> 'E:/Projects on Python/Online_library_for_Polytech/Design/qt_ui/ui_{file_name_without_extension}.py'"
+        print(cmd)
 
 
 if __name__ == '__main__':

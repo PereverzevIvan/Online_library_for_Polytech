@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 
 ################################################################################
 ## Form generated from reading UI file 'main_window.ui'
@@ -9,277 +9,280 @@
 ################################################################################
 
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-                            QMetaObject, QObject, QPoint, QRect,
-                            QSize, QTime, QUrl, Qt)
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-                           QFont, QFontDatabase, QGradient, QIcon,
-                           QImage, QKeySequence, QLinearGradient, QPainter,
-                           QPalette, QPixmap, QRadialGradient, QTransform)
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFrame,
-                               QHBoxLayout, QLabel, QLineEdit, QMainWindow,
-                               QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
-                               QTabWidget, QVBoxLayout, QWidget)
+    QHBoxLayout, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
+    QTabWidget, QVBoxLayout, QWidget)
+import resources_rc
 import resources_rc
 
-
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1175, 720)
-        MainWindow.setStyleSheet(u"/* General */\n"
-                                 "* {\n"
-                                 "	margin: 0;\n"
-                                 "	padding: 0;\n"
-                                 "	font-size: 18px;\n"
-                                 "	outline: none;\n"
-                                 "	font-family: \"Arial\";\n"
-                                 "}\n"
-                                 "\n"
-                                 "QFrame {\n"
-                                 "	border: none;\n"
-                                 "}\n"
-                                 "\n"
-                                 "#main_body {\n"
-                                 "	background-color: rgba(32,36,42,255);\n"
-                                 "	border_radius: 10%;\n"
-                                 "}\n"
-                                 "\n"
-                                 "#search_background, #ex_search_background, #sort_background {\n"
-                                 "	background-color: rgb(76,79,86);\n"
-                                 "	border-radius: 10%;\n"
-                                 "}\n"
-                                 "\n"
-                                 "#error_label {\n"
-                                 "	margin-top: 15px;\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* Tabs style */\n"
-                                 "QTabWidget::pane {\n"
-                                 "	background: transparent;\n"
-                                 "	border: none;\n"
-                                 "}\n"
-                                 "\n"
-                                 "QTabBar {\n"
-                                 "	qproperty-drawBase: 0;\n"
-                                 "}\n"
-                                 "\n"
-                                 "QTabBar::tab {\n"
-                                 "	background-color: rgb(100,100,116);\n"
-                                 "    color: white;\n"
-                                 "    border-radius: 5px;\n"
-                                 "	width: 200px;\n"
-                                 "	height: 35px;\n"
-                                 "	padding: 0px 10px;\n"
-                                 "	margin: 0 5px;\n"
-                                 "	font-weight: 500;\n"
-                                 "}\n"
-                                 "\n"
-                                 "QTabBar::tab:selected {\n"
-                                 "    background: rgba(254,211,44,255);\n"
-                                 "	color: black;\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* Qlabel style */\n"
-                                 "QLabel {\n"
-                                 "	color: white;\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* "
-                                 "Buttons style */\n"
-                                 "QPushButton {\n"
-                                 "	background: rgba(254,211,44,255);\n"
-                                 "	border-radius: 5px;\n"
-                                 "	padding: 0 10px 0 10px;\n"
-                                 "	height: 40px;\n"
-                                 "	color: black;\n"
-                                 "}\n"
-                                 "\n"
-                                 "QPushButton:pressed {\n"
-                                 "	background: rgba(204,161, 44,255);\n"
-                                 "	color: white;\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* Text input style */\n"
-                                 "QLineEdit {\n"
-                                 "	border-radius: 10%;\n"
-                                 "	background-color: rgba(32,36,42,255);\n"
-                                 "	color: white;\n"
-                                 "	padding-left: 10px;\n"
-                                 "	height: 40px;\n"
-                                 "}\n"
-                                 "\n"
-                                 "QLineEdit:focus {\n"
-                                 "	border: 2px solid rgba(254,211,44,255);\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* ComboBox style */\n"
-                                 "QComboBox {\n"
-                                 "	border-radius: 10%;\n"
-                                 "	background-color: rgba(32,36,42,255);\n"
-                                 "	color: white;\n"
-                                 "	padding-left: 10px;\n"
-                                 "	height: 40px;\n"
-                                 "}\n"
-                                 "\n"
-                                 "QComboBox:on {\n"
-                                 "    border-bottom-left-radius: 0px;\n"
-                                 "    border-bottom-right-radius: 0px;\n"
-                                 "}\n"
-                                 "\n"
-                                 "QComboBox::drop-down {\n"
-                                 "    subcontrol-origin: padding;\n"
-                                 "    subcontrol-position: top right;\n"
-                                 "    width: 40px;\n"
-                                 "	background-color: rgba(254,211,44,255);\n"
-                                 "    border-top-right-r"
-                                 "adius: 10%;\n"
-                                 "    border-bottom-right-radius: 10%;\n"
-                                 "}\n"
-                                 "\n"
-                                 "QComboBox::drop-down:on {\n"
-                                 "	border-bottom-left-radius: 0%;\n"
-                                 "	border-bottom-right-radius: 0%;\n"
-                                 "}\n"
-                                 "\n"
-                                 "QComboBox::down-arrow {\n"
-                                 "    image: url(:/Icons/For_QT/chevron-down.svg);\n"
-                                 "}\n"
-                                 "\n"
-                                 "QComboBox::down-arrow:on {\n"
-                                 "    image: url(:/Icons/For_QT/chevron-up.svg);\n"
-                                 "}\n"
-                                 "\n"
-                                 "QComboBox QAbstractItemView {\n"
-                                 "	/* Style of the drop-down list */\n"
-                                 "	padding: 10px 5px;\n"
-                                 "	color: white;\n"
-                                 "    selection-color: black;\n"
-                                 "    selection-background-color: rgba(254,211,44,255);\n"
-                                 "	font-size: 10pt;\n"
-                                 "    box-shadow: transparent;\n"
-                                 "	background-color: rgba(32,36,42,255);\n"
-                                 "	border-bottom-left-radius: 10%;\n"
-                                 "	border-bottom-right-radius: 10%;\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* CheckBox style */\n"
-                                 "QCheckBox {\n"
-                                 "	color: white;\n"
-                                 "	border-radius: 10%;\n"
-                                 "}\n"
-                                 "\n"
-                                 "QCheckBox::indicator:unchecked {\n"
-                                 "	image: url(:/Icons/For_QT/square.svg);\n"
-                                 "}\n"
-                                 "\n"
-                                 "QCheckBox::indicator:checked {\n"
-                                 "	\n"
-                                 "	image: url(:/Icons/For_QT/check-square"
-                                 ".svg);\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* Scroll Area style */\n"
-                                 "#scroll_widget {\n"
-                                 "	background-color: transparent;\n"
-                                 "}\n"
-                                 "\n"
-                                 "QScrollArea, #scroll_area_container {\n"
-                                 "	background-color: transparent;\n"
-                                 "}\n"
-                                 "\n"
-                                 "#scroll_area_content {\n"
-                                 "	background-color: rgb(76,79,86);\n"
-                                 "	border-radius: 10%;\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* TitleBar style */\n"
-                                 "#title_bar {\n"
-                                 "	background-color: rgb(76,79,86);\n"
-                                 "}\n"
-                                 "\n"
-                                 "#window_title {\n"
-                                 "	font-size: 20px;\n"
-                                 "}\n"
-                                 "\n"
-                                 "#title_bar QPushButton {\n"
-                                 "	height: 25px;\n"
-                                 "}\n"
-                                 "\n"
-                                 "#icon {\n"
-                                 "	min-width: 25px;\n"
-                                 "	min-height: 25px;\n"
-                                 "	background: rgba(254,211,44,255);\n"
-                                 "	border-radius: 5%;\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* ScrollBar style */\n"
-                                 "/* VERTICAL SCROLLBAR */\n"
-                                 " QScrollBar:vertical {\n"
-                                 "	border: none;\n"
-                                 "	background-color: rgba(32,36,42,255);\n"
-                                 "    width: 20px;\n"
-                                 "	border-radius: 0px;\n"
-                                 " }\n"
-                                 "\n"
-                                 "/*  HANDLE BAR VERTICAL */\n"
-                                 "QScrollBar::handle:vertical {	\n"
-                                 "	background-color: rgb(76,79,86);\n"
-                                 "	min-height: 20px;\n"
-                                 "	margin: 20px 0 20px 0;\n"
-                                 "}\n"
-                                 "QScrollBar::handle:v"
-                                 "ertical:hover{	\n"
-                                 "	background: rgba(204,161, 44,255);\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* BTN TOP - SCROLLBAR */\n"
-                                 "QScrollBar::sub-line:vertical {\n"
-                                 "	border: none;\n"
-                                 "	background: rgba(254,211,44,255);\n"
-                                 "	height: 20px;\n"
-                                 "	border-top-left-radius: 3%;\n"
-                                 "	border-top-right-radius: 3%;\n"
-                                 "	subcontrol-position: top;\n"
-                                 "	subcontrol-origin: margin;\n"
-                                 "}\n"
-                                 "QScrollBar::sub-line:vertical:hover {	\n"
-                                 "	background: rgba(204,161, 44,255);\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* BTN BOTTOM - SCROLLBAR */\n"
-                                 "QScrollBar::add-line:vertical {\n"
-                                 "	border: none;\n"
-                                 "	background: rgba(254,211,44,255);\n"
-                                 "	height: 20px;\n"
-                                 "	border-bottom-left-radius: 3%;\n"
-                                 "	border-bottom-right-radius: 3%;\n"
-                                 "	subcontrol-position: bottom;\n"
-                                 "	subcontrol-origin: margin;\n"
-                                 "}\n"
-                                 "QScrollBar::add-line:vertical:hover {	\n"
-                                 "	background: rgba(204,161, 44,255);\n"
-                                 "}\n"
-                                 "\n"
-                                 "/* RESET ARROW */\n"
-                                 "QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
-                                 "	background: none;\n"
-                                 "}\n"
-                                 "QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
-                                 "	backgrou"
-                                 "nd: none;\n"
-                                 "}")
-        self.central_widget = QWidget(MainWindow)
+class Ui_main_window(object):
+    def setupUi(self, main_window):
+        if not main_window.objectName():
+            main_window.setObjectName(u"main_window")
+        main_window.resize(860, 665)
+        main_window.setStyleSheet(u"")
+        self.central_widget = QWidget(main_window)
         self.central_widget.setObjectName(u"central_widget")
-        self.central_widget.setMinimumSize(QSize(1083, 663))
-        self.central_widget.setStyleSheet(u"")
+        self.central_widget.setMinimumSize(QSize(860, 665))
+        self.central_widget.setStyleSheet(u"/* General */\n"
+"* {\n"
+"	margin: 0;\n"
+"	padding: 0;\n"
+"	font-size: 16px;\n"
+"	outline: none;\n"
+"	font-family: \"Arial\";\n"
+"}\n"
+"\n"
+"QFrame {\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"#main_body {\n"
+"	background-color: rgba(32,36,42,255);\n"
+"	border-radius: 10%;\n"
+"}\n"
+"\n"
+"#search_background, #ex_search_background, #sort_background {\n"
+"	background-color: rgb(76,79,86);\n"
+"	border-radius: 10%;\n"
+"}\n"
+"\n"
+"#error_label {\n"
+"	margin-top: 15px;\n"
+"}\n"
+"\n"
+"/* Tabs style */\n"
+"QTabWidget::pane {\n"
+"	background: transparent;\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"QTabBar {\n"
+"	qproperty-drawBase: 0;\n"
+"}\n"
+"\n"
+"QTabBar::tab {\n"
+"	background-color: rgb(100,100,116);\n"
+"    color: white;\n"
+"    border-radius: 5px;\n"
+"	width: 200px;\n"
+"	height: 35px;\n"
+"	padding: 0px 10px;\n"
+"	margin: 0 5px;\n"
+"	font-weight: 500;\n"
+"}\n"
+"\n"
+"QTabBar::tab:selected {\n"
+"    background: rgba(254,211,44,255);\n"
+"	color: black;\n"
+"}\n"
+"\n"
+"/* Qlabel style */\n"
+"QLabel {\n"
+"	color: white;\n"
+"}\n"
+"\n"
+"/* "
+                        "Buttons style */\n"
+"QPushButton {\n"
+"	background: rgba(254,211,44,255);\n"
+"	border-radius: 5px;\n"
+"	padding: 0 10px 0 10px;\n"
+"	height: 40px;\n"
+"	color: black;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background: rgba(204,161, 44,255);\n"
+"	color: white;\n"
+"}\n"
+"\n"
+"/* Text input style */\n"
+"QLineEdit {\n"
+"	border-radius: 10%;\n"
+"	background-color: rgba(32,36,42,255);\n"
+"	color: white;\n"
+"	padding-left: 10px;\n"
+"	height: 40px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid rgba(254,211,44,255);\n"
+"}\n"
+"\n"
+"/* ComboBox style */\n"
+"QComboBox {\n"
+"	border-radius: 10%;\n"
+"	background-color: rgba(32,36,42,255);\n"
+"	color: white;\n"
+"	padding-left: 10px;\n"
+"	height: 40px;\n"
+"}\n"
+"\n"
+"QComboBox:on {\n"
+"    border-bottom-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    width: 40px;\n"
+"	background-color: rgba(254,211,44,255);\n"
+"    border-top-right-r"
+                        "adius: 10%;\n"
+"    border-bottom-right-radius: 10%;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down:on {\n"
+"	border-bottom-left-radius: 0%;\n"
+"	border-bottom-right-radius: 0%;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"    image: url(:/Icons/For_QT/chevron-down.svg);\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow:on {\n"
+"    image: url(:/Icons/For_QT/chevron-up.svg);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"	/* Style of the drop-down list */\n"
+"	padding: 10px 5px;\n"
+"	color: white;\n"
+"    selection-color: black;\n"
+"    selection-background-color: rgba(254,211,44,255);\n"
+"	font-size: 10pt;\n"
+"    box-shadow: transparent;\n"
+"	background-color: rgba(32,36,42,255);\n"
+"	border-bottom-left-radius: 10%;\n"
+"	border-bottom-right-radius: 10%;\n"
+"}\n"
+"\n"
+"/* CheckBox style */\n"
+"QCheckBox {\n"
+"	color: white;\n"
+"	border-radius: 10%;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:unchecked {\n"
+"	image: url(:/Icons/For_QT/square.svg);\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked {\n"
+"	\n"
+"	image: url(:/Icons/For_QT/check-square"
+                        ".svg);\n"
+"}\n"
+"\n"
+"/* Scroll Area style */\n"
+"#scroll_widget {\n"
+"	background-color: transparent;\n"
+"}\n"
+"\n"
+"QScrollArea, #scroll_area_container {\n"
+"	background-color: transparent;\n"
+"}\n"
+"\n"
+"#scroll_area_content {\n"
+"	background-color: rgb(76,79,86);\n"
+"	border-radius: 10%;\n"
+"}\n"
+"\n"
+"/* TitleBar style */\n"
+"#title_bar {\n"
+"	background-color: rgb(76,79,86);\n"
+"	border-top-left-radius: 10%;\n"
+"	border-top-right-radius: 10%;\n"
+"}\n"
+"\n"
+"#window_title {\n"
+"	font-size: 20px;\n"
+"}\n"
+"\n"
+"#title_bar QPushButton {\n"
+"	height: 25px;\n"
+"}\n"
+"\n"
+"#icon {\n"
+"	min-width: 25px;\n"
+"	min-height: 25px;\n"
+"	background: rgba(254,211,44,255);\n"
+"	border-radius: 5%;\n"
+"}\n"
+"\n"
+"/* ScrollBar style */\n"
+"/* VERTICAL SCROLLBAR */\n"
+" QScrollBar:vertical {\n"
+"	border: none;\n"
+"	background-color: rgba(32,36,42,255);\n"
+"    width: 20px;\n"
+"	border-radius: 0px;\n"
+" }\n"
+"\n"
+"/*  HANDLE BAR VERTICAL */\n"
+"QScrollBar::handle:vertical {	\n"
+"	background-color: rgb(76,79,86);\n"
+"	min-hei"
+                        "ght: 20px;\n"
+"	margin: 20px 0 20px 0;\n"
+"}\n"
+"QScrollBar::handle:vertical:hover{	\n"
+"	background: rgba(204,161, 44,255);\n"
+"}\n"
+"\n"
+"/* BTN TOP - SCROLLBAR */\n"
+"QScrollBar::sub-line:vertical {\n"
+"	border: none;\n"
+"	background: rgba(254,211,44,255);\n"
+"	height: 20px;\n"
+"	border-top-left-radius: 3%;\n"
+"	border-top-right-radius: 3%;\n"
+"	subcontrol-position: top;\n"
+"	subcontrol-origin: margin;\n"
+"}\n"
+"QScrollBar::sub-line:vertical:hover {	\n"
+"	background: rgba(204,161, 44,255);\n"
+"}\n"
+"\n"
+"/* BTN BOTTOM - SCROLLBAR */\n"
+"QScrollBar::add-line:vertical {\n"
+"	border: none;\n"
+"	background: rgba(254,211,44,255);\n"
+"	height: 20px;\n"
+"	border-bottom-left-radius: 3%;\n"
+"	border-bottom-right-radius: 3%;\n"
+"	subcontrol-position: bottom;\n"
+"	subcontrol-origin: margin;\n"
+"}\n"
+"QScrollBar::add-line:vertical:hover {	\n"
+"	background: rgba(204,161, 44,255);\n"
+"}\n"
+"\n"
+"/* RESET ARROW */\n"
+"QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
+"	background: none;\n"
+"}\n"
+"QScroll"
+                        "Bar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
+"	background: none;\n"
+"}")
         self.verticalLayout = QVBoxLayout(self.central_widget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.main_body = QWidget(self.central_widget)
         self.main_body.setObjectName(u"main_body")
+        self.main_body.setStyleSheet(u"")
         self.verticalLayout_2 = QVBoxLayout(self.main_body)
-        self.verticalLayout_2.setSpacing(10)
+        self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.title_bar = QWidget(self.main_body)
@@ -304,6 +307,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_13.addWidget(self.icon)
 
+
         self.horizontalLayout_6.addWidget(self.frame_5, 0, Qt.AlignLeft)
 
         self.frame_6 = QFrame(self.title_bar)
@@ -318,6 +322,7 @@ class Ui_MainWindow(object):
         self.window_title.setObjectName(u"window_title")
 
         self.verticalLayout_14.addWidget(self.window_title, 0, Qt.AlignLeft)
+
 
         self.horizontalLayout_6.addWidget(self.frame_6, 0, Qt.AlignLeft)
 
@@ -362,7 +367,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.close_btn)
 
+
         self.horizontalLayout_6.addWidget(self.frame_7, 0, Qt.AlignRight)
+
 
         self.verticalLayout_2.addWidget(self.title_bar, 0, Qt.AlignTop)
 
@@ -411,6 +418,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.search_input)
 
+
         self.verticalLayout_9.addWidget(self.frame)
 
         self.search_btn = QPushButton(self.search_background)
@@ -422,6 +430,7 @@ class Ui_MainWindow(object):
         self.search_btn.setIconSize(QSize(25, 25))
 
         self.verticalLayout_9.addWidget(self.search_btn, 0, Qt.AlignRight)
+
 
         self.verticalLayout_4.addWidget(self.search_background)
 
@@ -460,6 +469,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.ex_search_status)
 
+
         self.verticalLayout_6.addLayout(self.horizontalLayout_3)
 
         self.horizontalLayout_4 = QHBoxLayout()
@@ -476,7 +486,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.ex_search_inputs)
 
+
         self.verticalLayout_6.addLayout(self.horizontalLayout_4)
+
 
         self.verticalLayout_10.addWidget(self.frame_2)
 
@@ -506,7 +518,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.ex_search_btn)
 
+
         self.verticalLayout_10.addWidget(self.frame_3, 0, Qt.AlignRight)
+
 
         self.verticalLayout_7.addWidget(self.ex_search_background)
 
@@ -542,17 +556,11 @@ class Ui_MainWindow(object):
 
         self.sort_params = QComboBox(self.frame_4)
         self.sort_params.addItem("")
-        self.sort_params.addItem("")
-        self.sort_params.addItem("")
-        self.sort_params.addItem("")
-        self.sort_params.addItem("")
-        self.sort_params.addItem("")
-        self.sort_params.addItem("")
-        self.sort_params.addItem("")
         self.sort_params.setObjectName(u"sort_params")
         self.sort_params.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_5.addWidget(self.sort_params)
+
 
         self.verticalLayout_11.addWidget(self.frame_4)
 
@@ -574,11 +582,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.sort_btn, 0, Qt.AlignRight)
 
+
         self.verticalLayout_8.addWidget(self.sort_background)
 
         self.tab_menu.addTab(self.sort_tab, "")
 
         self.verticalLayout_3.addWidget(self.tab_menu)
+
 
         self.verticalLayout_15.addWidget(self.instrumental_menu, 0, Qt.AlignTop)
 
@@ -609,7 +619,7 @@ class Ui_MainWindow(object):
         self.scroll_area.setWidgetResizable(True)
         self.scroll_area_container = QWidget()
         self.scroll_area_container.setObjectName(u"scroll_area_container")
-        self.scroll_area_container.setGeometry(QRect(0, 0, 1145, 424))
+        self.scroll_area_container.setGeometry(QRect(0, 0, 830, 372))
         self.verticalLayout_5 = QVBoxLayout(self.scroll_area_container)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -627,94 +637,72 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_16.addLayout(self.scroll_layout)
 
+
         self.verticalLayout_5.addWidget(self.scroll_area_content)
 
         self.scroll_area.setWidget(self.scroll_area_container)
 
         self.verticalLayout_12.addWidget(self.scroll_area)
 
+
         self.verticalLayout_15.addWidget(self.scroll_widget)
+
 
         self.verticalLayout_2.addWidget(self.widget)
 
+        self.size_grip = QFrame(self.main_body)
+        self.size_grip.setObjectName(u"size_grip")
+        self.size_grip.setMinimumSize(QSize(10, 10))
+        self.size_grip.setMaximumSize(QSize(10, 10))
+        self.size_grip.setFrameShape(QFrame.StyledPanel)
+        self.size_grip.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_2.addWidget(self.size_grip, 0, Qt.AlignRight)
+
+        self.widget.raise_()
+        self.title_bar.raise_()
+        self.size_grip.raise_()
+
         self.verticalLayout.addWidget(self.main_body)
 
-        MainWindow.setCentralWidget(self.central_widget)
+        main_window.setCentralWidget(self.central_widget)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(main_window)
 
         self.tab_menu.setCurrentIndex(0)
         self.sort_params.setCurrentIndex(0)
 
-        QMetaObject.connectSlotsByName(MainWindow)
 
+        QMetaObject.connectSlotsByName(main_window)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+    def retranslateUi(self, main_window):
+        main_window.setWindowTitle(QCoreApplication.translate("main_window", u"MainWindow", None))
         self.icon.setText("")
-        self.window_title.setText(
-            QCoreApplication.translate("MainWindow", u"\u0411\u0438\u0431\u043b\u0438\u043e\u0442\u0435\u043a\u0430",
-                                       None))
+        self.window_title.setText(QCoreApplication.translate("main_window", u"\u0411\u0438\u0431\u043b\u0438\u043e\u0442\u0435\u043a\u0430", None))
         self.min_btn.setText("")
         self.max_btn.setText("")
         self.close_btn.setText("")
-        self.label.setText(QCoreApplication.translate("MainWindow",
-                                                      u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043a\u043d\u0438\u0433\u0438:",
-                                                      None))
+        self.label.setText(QCoreApplication.translate("main_window", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043a\u043d\u0438\u0433\u0438:", None))
         self.search_input.setText("")
-        self.search_input.setPlaceholderText(QCoreApplication.translate("MainWindow",
-                                                                        u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043a\u043d\u0438\u0433\u0438",
-                                                                        None))
-        self.search_btn.setText(QCoreApplication.translate("MainWindow", u" \u041d\u0430\u0439\u0442\u0438", None))
-        self.tab_menu.setTabText(self.tab_menu.indexOf(self.search_tab),
-                                 QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0438\u0441\u043a", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0442\u0443\u0441:", None))
-        self.ex_search_status.setText(QCoreApplication.translate("MainWindow",
-                                                                 u"\u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u043f\u043e\u0441\u043a\u0430 \u043d\u0435 \u0437\u0430\u0434\u0430\u043d\u044b",
-                                                                 None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow",
-                                                        u"\u0417\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u043e \u043f\u043e\u043b\u0435\u0439:",
-                                                        None))
-        self.ex_search_inputs.setText(
-            QCoreApplication.translate("MainWindow", u"0 \u043f\u043e\u043b\u0435\u0439", None))
-        self.ex_search_params_btn.setText(QCoreApplication.translate("MainWindow",
-                                                                     u"  \u0417\u0430\u0434\u0430\u0442\u044c \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b",
-                                                                     None))
-        self.ex_search_btn.setText(QCoreApplication.translate("MainWindow", u" \u041d\u0430\u0439\u0442\u0438", None))
-        self.tab_menu.setTabText(self.tab_menu.indexOf(self.ex_search_tab), QCoreApplication.translate("MainWindow",
-                                                                                                       u"\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043d\u043d\u044b\u0439 \u043f\u043e\u0438\u0441\u043a",
-                                                                                                       None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow",
-                                                        u"\u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043f\u043e:",
-                                                        None))
-        self.sort_params.setItemText(0, QCoreApplication.translate("MainWindow",
-                                                                   u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438",
-                                                                   None))
-        self.sort_params.setItemText(1, QCoreApplication.translate("MainWindow", u"1", None))
-        self.sort_params.setItemText(2, QCoreApplication.translate("MainWindow", u"2", None))
-        self.sort_params.setItemText(3, QCoreApplication.translate("MainWindow", u"3", None))
-        self.sort_params.setItemText(4, QCoreApplication.translate("MainWindow", u"4", None))
-        self.sort_params.setItemText(5, QCoreApplication.translate("MainWindow", u"5", None))
-        self.sort_params.setItemText(6, QCoreApplication.translate("MainWindow", u"6", None))
-        self.sort_params.setItemText(7, QCoreApplication.translate("MainWindow", u"7", None))
+        self.search_input.setPlaceholderText(QCoreApplication.translate("main_window", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u043a\u043d\u0438\u0433\u0438", None))
+        self.search_btn.setText(QCoreApplication.translate("main_window", u" \u041d\u0430\u0439\u0442\u0438", None))
+        self.tab_menu.setTabText(self.tab_menu.indexOf(self.search_tab), QCoreApplication.translate("main_window", u"\u041f\u043e\u0438\u0441\u043a", None))
+        self.label_3.setText(QCoreApplication.translate("main_window", u"\u0421\u0442\u0430\u0442\u0443\u0441:", None))
+        self.ex_search_status.setText(QCoreApplication.translate("main_window", u"\u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u043f\u043e\u0441\u043a\u0430 \u043d\u0435 \u0437\u0430\u0434\u0430\u043d\u044b", None))
+        self.label_4.setText(QCoreApplication.translate("main_window", u"\u0417\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u043e \u043f\u043e\u043b\u0435\u0439:", None))
+        self.ex_search_inputs.setText(QCoreApplication.translate("main_window", u"0 \u043f\u043e\u043b\u0435\u0439", None))
+        self.ex_search_params_btn.setText(QCoreApplication.translate("main_window", u"  \u0417\u0430\u0434\u0430\u0442\u044c \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b", None))
+        self.ex_search_btn.setText(QCoreApplication.translate("main_window", u" \u041d\u0430\u0439\u0442\u0438", None))
+        self.tab_menu.setTabText(self.tab_menu.indexOf(self.ex_search_tab), QCoreApplication.translate("main_window", u"\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043d\u043d\u044b\u0439 \u043f\u043e\u0438\u0441\u043a", None))
+        self.label_6.setText(QCoreApplication.translate("main_window", u"\u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043f\u043e:", None))
+        self.sort_params.setItemText(0, QCoreApplication.translate("main_window", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438", None))
 
-        self.sort_params.setCurrentText(QCoreApplication.translate("MainWindow",
-                                                                   u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438",
-                                                                   None))
-        self.sort_params.setPlaceholderText(QCoreApplication.translate("MainWindow",
-                                                                       u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u043a\u0438",
-                                                                       None))
-        self.checkBox.setText(
-            QCoreApplication.translate("MainWindow", u"\u041f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e",
-                                       None))
-        self.sort_btn.setText(QCoreApplication.translate("MainWindow",
-                                                         u" \u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c",
-                                                         None))
-        self.tab_menu.setTabText(self.tab_menu.indexOf(self.sort_tab), QCoreApplication.translate("MainWindow",
-                                                                                                  u"\u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430",
-                                                                                                  None))
-        self.error_label.setText(QCoreApplication.translate("MainWindow",
-                                                            u"\u0417\u0434\u0435\u0441\u044c \u0434\u043e\u043b\u0436\u043d\u043e \u0431\u044b\u0442\u044c \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u043e\u0431 \u043e\u0448\u0438\u0431\u043a\u0435",
-                                                            None))
+        self.sort_params.setCurrentText(QCoreApplication.translate("main_window", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438", None))
+        self.sort_params.setPlaceholderText(QCoreApplication.translate("main_window", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u043a\u0438", None))
+        self.checkBox.setText(QCoreApplication.translate("main_window", u"\u041f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e", None))
+        self.sort_btn.setText(QCoreApplication.translate("main_window", u" \u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
+        self.tab_menu.setTabText(self.tab_menu.indexOf(self.sort_tab), QCoreApplication.translate("main_window", u"\u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", None))
+        self.error_label.setText(QCoreApplication.translate("main_window", u"\u0417\u0434\u0435\u0441\u044c \u0434\u043e\u043b\u0436\u043d\u043e \u0431\u044b\u0442\u044c \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u043e\u0431 \u043e\u0448\u0438\u0431\u043a\u0435", None))
     # retranslateUi
+
