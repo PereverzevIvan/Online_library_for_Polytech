@@ -162,7 +162,7 @@ class Ui_book_card(object):
         sizePolicy3.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
         self.label_5.setSizePolicy(sizePolicy3)
 
-        self.horizontalLayout_3.addWidget(self.label_5)
+        self.horizontalLayout_3.addWidget(self.label_5, 0, Qt.AlignTop)
 
         self.year_label = QLabel(self.frame_2)
         self.year_label.setObjectName(u"year_label")
@@ -170,7 +170,7 @@ class Ui_book_card(object):
         self.year_label.setSizePolicy(sizePolicy3)
         self.year_label.setWordWrap(True)
 
-        self.horizontalLayout_3.addWidget(self.year_label)
+        self.horizontalLayout_3.addWidget(self.year_label, 0, Qt.AlignTop)
 
 
         self.verticalLayout_3.addWidget(self.frame_2, 0, Qt.AlignLeft)
@@ -188,7 +188,7 @@ class Ui_book_card(object):
         sizePolicy3.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
         self.label_9.setSizePolicy(sizePolicy3)
 
-        self.horizontalLayout_5.addWidget(self.label_9)
+        self.horizontalLayout_5.addWidget(self.label_9, 0, Qt.AlignTop)
 
         self.type_label = QLabel(self.frame_4)
         self.type_label.setObjectName(u"type_label")
@@ -196,7 +196,7 @@ class Ui_book_card(object):
         self.type_label.setSizePolicy(sizePolicy3)
         self.type_label.setWordWrap(True)
 
-        self.horizontalLayout_5.addWidget(self.type_label)
+        self.horizontalLayout_5.addWidget(self.type_label, 0, Qt.AlignTop)
 
 
         self.verticalLayout_3.addWidget(self.frame_4, 0, Qt.AlignLeft)
@@ -214,7 +214,7 @@ class Ui_book_card(object):
         sizePolicy3.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
         self.label_7.setSizePolicy(sizePolicy3)
 
-        self.horizontalLayout_4.addWidget(self.label_7)
+        self.horizontalLayout_4.addWidget(self.label_7, 0, Qt.AlignTop)
 
         self.pages_label = QLabel(self.frame_3)
         self.pages_label.setObjectName(u"pages_label")
@@ -222,7 +222,7 @@ class Ui_book_card(object):
         self.pages_label.setSizePolicy(sizePolicy3)
         self.pages_label.setWordWrap(True)
 
-        self.horizontalLayout_4.addWidget(self.pages_label)
+        self.horizontalLayout_4.addWidget(self.pages_label, 0, Qt.AlignTop)
 
 
         self.verticalLayout_3.addWidget(self.frame_3, 0, Qt.AlignLeft)
@@ -240,18 +240,18 @@ class Ui_book_card(object):
         sizePolicy3.setHeightForWidth(self.label_4.sizePolicy().hasHeightForWidth())
         self.label_4.setSizePolicy(sizePolicy3)
 
-        self.horizontalLayout_2.addWidget(self.label_4)
+        self.horizontalLayout_2.addWidget(self.label_4, 0, Qt.AlignTop)
 
         self.authors_label = QLabel(self.frame)
         self.authors_label.setObjectName(u"authors_label")
-        sizePolicy3.setHeightForWidth(self.authors_label.sizePolicy().hasHeightForWidth())
-        self.authors_label.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.authors_label.sizePolicy().hasHeightForWidth())
+        self.authors_label.setSizePolicy(sizePolicy2)
         self.authors_label.setWordWrap(True)
 
-        self.horizontalLayout_2.addWidget(self.authors_label)
+        self.horizontalLayout_2.addWidget(self.authors_label, 0, Qt.AlignTop)
 
 
-        self.verticalLayout_3.addWidget(self.frame, 0, Qt.AlignLeft)
+        self.verticalLayout_3.addWidget(self.frame)
 
 
         self.horizontalLayout.addWidget(self.description)

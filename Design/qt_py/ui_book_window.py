@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QPushButton, QSizePolicy, QSpacerItem, QTabWidget,
-    QTextBrowser, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QFrame, QHBoxLayout,
+    QLabel, QPushButton, QSizePolicy, QSpacerItem,
+    QTabWidget, QTextBrowser, QVBoxLayout, QWidget)
 import resources_rc
 import resources_rc
 
@@ -291,10 +291,15 @@ class Ui_book_window(object):
 "	background-color: transparent;\n"
 "	color: white;\n"
 "	font-size: 16px;\n"
+"	overflow: hidden;\n"
 "}\n"
 "\n"
 "#bbk_text, #udk_text, #isbn_text {\n"
 "	max-height: 60px;\n"
+"}\n"
+"\n"
+"#annotation_text {\n"
+"	font-size: 14px;\n"
 "}\n"
 "")
         self.verticalLayout = QVBoxLayout(book_window)
@@ -944,6 +949,7 @@ class Ui_book_window(object):
         self.open_library_btn = QPushButton(self.buttons)
         self.open_library_btn.setObjectName(u"open_library_btn")
         self.open_library_btn.setMinimumSize(QSize(0, 50))
+        self.open_library_btn.setCursor(QCursor(Qt.PointingHandCursor))
         icon4 = QIcon()
         icon4.addFile(u":/Icons/For_QT/book-open.svg", QSize(), QIcon.Normal, QIcon.Off)
         self.open_library_btn.setIcon(icon4)
@@ -1008,6 +1014,8 @@ class Ui_book_window(object):
         self.annotation_text.setFont(font)
         self.annotation_text.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
         self.annotation_text.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.annotation_text.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContentsOnFirstShow)
+        self.annotation_text.setOverwriteMode(False)
 
         self.horizontalLayout_10.addWidget(self.annotation_text)
 
@@ -1143,7 +1151,7 @@ class Ui_book_window(object):
 
         self.retranslateUi(book_window)
 
-        self.big_description.setCurrentIndex(0)
+        self.big_description.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(book_window)
@@ -1182,7 +1190,7 @@ class Ui_book_window(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Arial'; font-size:16px; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Roboto','sans-serif'; font-size:16px; font-weight:296; color:#ffffff; background-color:transparent;\">\u0423\u0447\u0435\u0431\u043d\u043e-\u043c\u0435\u0442\u043e\u0434\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u043f\u043e\u0441\u043e\u0431\u0438\u0435 \u00ab\u0425\u0443\u0434\u043e\u0436\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u043a\u0435\u0440\u0430\u043c\u0438\u043a\u0430\u00bb \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043b\u0435\u043d\u043e \u0432 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Roboto','sans-serif'; font-size:14px; font-weight:296; color:#ffffff; background-color:transparent;\">\u0423\u0447\u0435\u0431\u043d\u043e-\u043c\u0435\u0442\u043e\u0434\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u043f\u043e\u0441\u043e\u0431\u0438\u0435 \u00ab\u0425\u0443\u0434\u043e\u0436\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u043a\u0435\u0440\u0430\u043c\u0438\u043a\u0430\u00bb \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043b\u0435\u043d\u043e \u0432 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438"
                         "\u0438 \u0441 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u043e\u0439 \u043f\u0440\u043e\u0444\u0435\u0441\u0441\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u043c\u043e\u0434\u0443\u043b\u044f \u00ab\u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u043e-\u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0434\u0435\u044f\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c\u00bb, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0447\u0430\u0441\u0442\u044c\u044e \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0439 \u043f\u0440\u043e\u0444\u0435\u0441\u0441\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0439 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0439 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b \u0432 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441 \u0424\u0413\u041e\u0421 \u0421\u041f"
                         "\u041e \u043f\u043e \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438 54.02.02 \u00ab\u0414\u0435\u043a\u043e\u0440\u0430\u0442\u0438\u0432\u043d\u043e-\u043f\u0440\u0438\u043a\u043b\u0430\u0434\u043d\u043e\u0435 \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u043e \u0438 \u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0435 \u043f\u0440\u043e\u043c\u044b\u0441\u043b\u044b\u00bb (\u043f\u043e \u0432\u0438\u0434\u0430\u043c). \u0412 \u043f\u043e\u0441\u043e\u0431\u0438\u0438 \u0443\u0434\u0435\u043b\u0435\u043d\u043e \u0432\u043d\u0438\u043c\u0430\u043d\u0438\u0435 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u043c \u044d\u0442\u0430\u043f\u0430\u043c \u0440\u0430\u0431\u043e\u0442\u044b: \u0437\u0430\u0433\u043e\u0442\u043e\u0432\u043a\u0435 \u0433\u043b\u0438\u043d\u044b, \u0442\u0435\u0445\u043d\u0438\u043a\u0430\u043c \u043b\u0435\u043f\u043a\u0438, \u0432\u0438\u0434\u0430\u043c \u0438 \u0441\u043f\u043e\u0441\u043e\u0431\u0430\u043c \u043d\u0430\u043d\u0435\u0441\u0435\u043d\u0438\u044f"
                         " \u0434\u0435\u043a\u043e\u0440\u0430, \u043e\u0431\u0436\u0438\u0433\u0443 \u0438\u0437\u0434\u0435\u043b\u0438\u0439, \u0430 \u0442\u0430\u043a\u0436\u0435 \u043e\u0431\u043e\u0437\u043d\u0430\u0447\u0435\u043d\u044b \u0442\u0435\u043c\u044b \u0438\u0442\u043e\u0433\u043e\u0432\u044b\u0445 \u0437\u0430\u0434\u0430\u043d\u0438\u0439 \u0438 \u0437\u0430\u0434\u0430\u043d\u0438\u044f \u043a \u043d\u0438\u043c. \u0422\u0430\u043a\u0436\u0435 \u0432 \u043f\u043e\u0441\u043e\u0431\u0438\u0438 \u0434\u0430\u044e\u0442\u0441\u044f \u0441\u0432\u0435\u0434\u0435\u043d\u0438\u044f \u043e \u0433\u043b\u0438\u043d\u0435, \u043c\u0435\u0442\u043e\u0434\u0430\u0445 \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0438 \u0438 \u0444\u043e\u0440\u043c\u043e\u0432\u0430\u043d\u0438\u044f \u0433\u043b\u0438\u043d\u044f\u043d\u044b\u0445 \u043c\u0430\u0441\u0441, \u0441\u0443\u0448\u043a\u0435, \u043e\u0431\u0436\u0438\u0433\u0435 \u0438 \u0432\u0438\u0434\u0430\u0445 \u0434\u0435\u043a\u043e\u0440\u0438\u0440\u043e\u0432"
