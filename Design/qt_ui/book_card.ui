@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>743</width>
-    <height>223</height>
+    <width>597</width>
+    <height>222</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>743</width>
-    <height>223</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -30,7 +30,7 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-size: 14px;
+	font-size: 12px;
 	outline: none;
 }
 
@@ -56,7 +56,7 @@ QLabel {
 }
 
 #heading_label {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 500;
 }
 
@@ -67,6 +67,8 @@ QPushButton {
 	padding: 0 10px 0 10px;
 	height: 40px;
 	color: black;
+	font-size: 15px;
+	font-weight: 500;
 }
 
 QPushButton:pressed {
@@ -188,7 +190,7 @@ QPushButton:pressed {
           <number>0</number>
          </property>
          <property name="bottomMargin">
-          <number>0</number>
+          <number>5</number>
          </property>
          <item>
           <widget class="QFrame" name="frame_5">
@@ -214,10 +216,10 @@ QPushButton:pressed {
             <property name="bottomMargin">
              <number>10</number>
             </property>
-            <item>
+            <item alignment="Qt::AlignTop">
              <widget class="QLabel" name="heading_label">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>

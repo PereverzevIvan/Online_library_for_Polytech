@@ -26,11 +26,12 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(860, 665)
+        main_window.resize(713, 567)
+        main_window.setMinimumSize(QSize(713, 567))
         main_window.setStyleSheet(u"")
         self.central_widget = QWidget(main_window)
         self.central_widget.setObjectName(u"central_widget")
-        self.central_widget.setMinimumSize(QSize(860, 665))
+        self.central_widget.setMinimumSize(QSize(0, 0))
         self.central_widget.setStyleSheet(u"/* General */\n"
 "* {\n"
 "	margin: 0;\n"
@@ -69,6 +70,8 @@ class Ui_main_window(object):
 "}\n"
 "\n"
 "QTabBar::tab {\n"
+"	font-size: 16px;\n"
+"	font-weight: 500;\n"
 "	background-color: rgb(100,100,116);\n"
 "    color: white;\n"
 "    border-radius: 5px;\n"
@@ -85,18 +88,20 @@ class Ui_main_window(object):
 "}\n"
 "\n"
 "/* Qlabel style */\n"
-"QLabel {\n"
+"Q"
+                        "Label {\n"
 "	color: white;\n"
 "}\n"
 "\n"
-"/* "
-                        "Buttons style */\n"
+"/* Buttons style */\n"
 "QPushButton {\n"
 "	background: rgba(254,211,44,255);\n"
 "	border-radius: 5px;\n"
 "	padding: 0 10px 0 10px;\n"
 "	height: 40px;\n"
 "	color: black;\n"
+"	font-size: 16px;\n"
+"	font-weight: 500;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -134,10 +139,10 @@ class Ui_main_window(object):
 "QComboBox::drop-down {\n"
 "    subcontrol-origin: padding;\n"
 "    subcontrol-position: top right;\n"
-"    width: 40px;\n"
+""
+                        "    width: 40px;\n"
 "	background-color: rgba(254,211,44,255);\n"
-"    border-top-right-r"
-                        "adius: 10%;\n"
+"    border-top-right-radius: 10%;\n"
 "    border-bottom-right-radius: 10%;\n"
 "}\n"
 "\n"
@@ -176,11 +181,11 @@ class Ui_main_window(object):
 "QCheckBox::indicator:unchecked {\n"
 "	image: url(:/Icons/For_QT/square.svg);\n"
 "}\n"
-"\n"
+""
+                        "\n"
 "QCheckBox::indicator:checked {\n"
 "	\n"
-"	image: url(:/Icons/For_QT/check-square"
-                        ".svg);\n"
+"	image: url(:/Icons/For_QT/check-square.svg);\n"
 "}\n"
 "\n"
 "/* Scroll Area style */\n"
@@ -205,7 +210,7 @@ class Ui_main_window(object):
 "}\n"
 "\n"
 "#window_title {\n"
-"	font-size: 20px;\n"
+"	font-size: 18px;\n"
 "}\n"
 "\n"
 "#title_bar QPushButton {\n"
@@ -229,10 +234,10 @@ class Ui_main_window(object):
 " }\n"
 "\n"
 "/*  HANDLE BAR VERTICAL */\n"
-"QScrollBar::handle:vertical {	\n"
+""
+                        "QScrollBar::handle:vertical {	\n"
 "	background-color: rgb(76,79,86);\n"
-"	min-hei"
-                        "ght: 20px;\n"
+"	min-height: 20px;\n"
 "	margin: 20px 0 20px 0;\n"
 "}\n"
 "QScrollBar::handle:vertical:hover{	\n"
@@ -268,11 +273,11 @@ class Ui_main_window(object):
 "}\n"
 "\n"
 "/* RESET ARROW */\n"
-"QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
+"QScrollBar::up-arrow:ver"
+                        "tical, QScrollBar::down-arrow:vertical {\n"
 "	background: none;\n"
 "}\n"
-"QScroll"
-                        "Bar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
+"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
 "	background: none;\n"
 "}")
         self.verticalLayout = QVBoxLayout(self.central_widget)
@@ -555,7 +560,6 @@ class Ui_main_window(object):
         self.horizontalLayout_5.addWidget(self.label_6)
 
         self.sort_params = QComboBox(self.frame_4)
-        self.sort_params.addItem("")
         self.sort_params.setObjectName(u"sort_params")
         self.sort_params.setCursor(QCursor(Qt.PointingHandCursor))
 
@@ -619,7 +623,7 @@ class Ui_main_window(object):
         self.scroll_area.setWidgetResizable(True)
         self.scroll_area_container = QWidget()
         self.scroll_area_container.setObjectName(u"scroll_area_container")
-        self.scroll_area_container.setGeometry(QRect(0, 0, 830, 372))
+        self.scroll_area_container.setGeometry(QRect(0, 0, 683, 274))
         self.verticalLayout_5 = QVBoxLayout(self.scroll_area_container)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -670,7 +674,7 @@ class Ui_main_window(object):
         self.retranslateUi(main_window)
 
         self.tab_menu.setCurrentIndex(0)
-        self.sort_params.setCurrentIndex(0)
+        self.sort_params.setCurrentIndex(-1)
 
 
         QMetaObject.connectSlotsByName(main_window)
@@ -696,9 +700,7 @@ class Ui_main_window(object):
         self.ex_search_btn.setText(QCoreApplication.translate("main_window", u" \u041d\u0430\u0439\u0442\u0438", None))
         self.tab_menu.setTabText(self.tab_menu.indexOf(self.ex_search_tab), QCoreApplication.translate("main_window", u"\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043d\u043d\u044b\u0439 \u043f\u043e\u0438\u0441\u043a", None))
         self.label_6.setText(QCoreApplication.translate("main_window", u"\u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043f\u043e:", None))
-        self.sort_params.setItemText(0, QCoreApplication.translate("main_window", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438", None))
-
-        self.sort_params.setCurrentText(QCoreApplication.translate("main_window", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0438", None))
+        self.sort_params.setCurrentText("")
         self.sort_params.setPlaceholderText(QCoreApplication.translate("main_window", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u043a\u0438", None))
         self.checkBox.setText(QCoreApplication.translate("main_window", u"\u041f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e", None))
         self.sort_btn.setText(QCoreApplication.translate("main_window", u" \u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))

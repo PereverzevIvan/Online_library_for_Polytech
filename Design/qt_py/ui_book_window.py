@@ -1,5 +1,4 @@
-﻿# -*- coding: utf-8 -*-
-
+# -*- coding: utf-8 -*-
 ################################################################################
 ## Form generated from reading UI file 'book_window.ui'
 ##
@@ -25,12 +24,12 @@ class Ui_book_window(object):
     def setupUi(self, book_window):
         if not book_window.objectName():
             book_window.setObjectName(u"book_window")
-        book_window.resize(716, 653)
+        book_window.resize(739, 578)
         book_window.setStyleSheet(u"/* General */\n"
 "* {\n"
 "	margin: 0;\n"
 "	padding: 0;\n"
-"	font-size: 16px;\n"
+"	font-size: 12px;\n"
 "	outline: none;\n"
 "	font-family: \"Arial\";\n"
 "}\n"
@@ -76,6 +75,7 @@ class Ui_book_window(object):
 "	height: 35px;\n"
 "	padding: 0px 10px;\n"
 "	margin: 0 5px;\n"
+"	font-size: 15px;\n"
 "	font-weight: 500;\n"
 "}\n"
 "\n"
@@ -84,8 +84,8 @@ class Ui_book_window(object):
 "	color: black;\n"
 "}\n"
 "\n"
-"#tab_background, #tab_backg"
-                        "round_2, #tab_background_3 {\n"
+"#tab_"
+                        "background, #tab_background_2, #tab_background_3 {\n"
 "	background-color: rgb(76,79,86);\n"
 "	border-radius: 10%;\n"
 "}\n"
@@ -96,8 +96,8 @@ class Ui_book_window(object):
 "}\n"
 "\n"
 "#book_title {\n"
-"	font-size: 20px;\n"
-"	font-weight: 500;\n"
+"	font-size: 18px;\n"
+"	font-weight: 600;\n"
 "}\n"
 "\n"
 "/* Buttons style */\n"
@@ -107,6 +107,8 @@ class Ui_book_window(object):
 "	padding: 0 10px 0 10px;\n"
 "	height: 40px;\n"
 "	color: black;\n"
+"	font-size: 15px;\n"
+"	font-weight: 500;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -134,11 +136,11 @@ class Ui_book_window(object):
 "	color: white;\n"
 "	padding-left: 10px;\n"
 "	height: 40px;\n"
-"}\n"
+""
+                        "}\n"
 "\n"
 "QComboBox:on {\n"
-"    border-bottom-left-radius: 0p"
-                        "x;\n"
+"    border-bottom-left-radius: 0px;\n"
 "    border-bottom-right-radius: 0px;\n"
 "}\n"
 "\n"
@@ -174,11 +176,11 @@ class Ui_book_window(object):
 "    box-shadow: transparent;\n"
 "	background-color: rgba(32,36,42,255);\n"
 "	border-bottom-left-radius: 10%;\n"
-"	border-bottom-right-radius: 10%;\n"
+"	bor"
+                        "der-bottom-right-radius: 10%;\n"
 "}\n"
 "\n"
-"/* CheckBox style "
-                        "*/\n"
+"/* CheckBox style */\n"
 "QCheckBox {\n"
 "	color: white;\n"
 "	border-radius: 10%;\n"
@@ -216,7 +218,7 @@ class Ui_book_window(object):
 "}\n"
 "\n"
 "#window_title {\n"
-"	font-size: 20px;\n"
+"	font-size: 18px;\n"
 "}\n"
 "\n"
 "#title_bar QPushButton {\n"
@@ -227,12 +229,12 @@ class Ui_book_window(object):
 "	min-width: 25px;\n"
 "	min-height: 25px;\n"
 "	background: rgba(254,211,44,255);\n"
-"	border-radius: 5%;\n"
+"	border-radiu"
+                        "s: 5%;\n"
 "}\n"
 "\n"
 "/* ScrollBar style */\n"
-"/* VERTICAL SCR"
-                        "OLLBAR */\n"
+"/* VERTICAL SCROLLBAR */\n"
 " QScrollBar:vertical {\n"
 "	border: 1px solid rgba(254,211,44,255);\n"
 "	background-color: rgba(32,36,42,255);\n"
@@ -269,9 +271,9 @@ class Ui_book_window(object):
 "	border: none;\n"
 "	background: rgba(254,211,44,255);\n"
 "	height: 21px;\n"
-"	border-bottom-left-radius: 3%;\n"
-"	border-bottom-right-radius: 3%;"
-                        "\n"
+"	bord"
+                        "er-bottom-left-radius: 3%;\n"
+"	border-bottom-right-radius: 3%;\n"
 "	subcontrol-position: bottom;\n"
 "	subcontrol-origin: margin;\n"
 "}\n"
@@ -291,16 +293,12 @@ class Ui_book_window(object):
 "	background-color: transparent;\n"
 "	color: white;\n"
 "	font-size: 16px;\n"
-"	overflow: hidden;\n"
-"}\n"
-"\n"
-"#bbk_text, #udk_text, #isbn_text {\n"
-"	max-height: 60px;\n"
 "}\n"
 "\n"
 "#annotation_text {\n"
 "	font-size: 14px;\n"
 "}\n"
+"\n"
 "")
         self.verticalLayout = QVBoxLayout(book_window)
         self.verticalLayout.setSpacing(0)
@@ -308,277 +306,7 @@ class Ui_book_window(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.main_body = QWidget(book_window)
         self.main_body.setObjectName(u"main_body")
-        self.main_body.setStyleSheet(u"/* General */\n"
-"* {\n"
-"	margin: 0;\n"
-"	padding: 0;\n"
-"	font-size: 16px;\n"
-"	outline: none;\n"
-"	font-family: \"Arial\";\n"
-"}\n"
-"\n"
-"QFrame {\n"
-"	border: none;\n"
-"}\n"
-"\n"
-"#main_body {\n"
-"	background-color: rgba(32,36,42,255);\n"
-"	border-radius: 10%;\n"
-"}\n"
-"\n"
-"#book_info {\n"
-"	background-color: rgb(76,79,86);\n"
-"	border-radius: 10%;\n"
-"}\n"
-"\n"
-"#error_label {\n"
-"	margin-top: 15px;\n"
-"}\n"
-"\n"
-"/* Tabs style */\n"
-"QTabWidget QLabel {\n"
-"	font-size: 16px;\n"
-"}\n"
-"\n"
-"QTabWidget::pane {\n"
-"	background: transparent;\n"
-"	border: none;\n"
-"	overflow: hidden;\n"
-"}\n"
-"\n"
-"QTabWidget::tab-bar {\n"
-"    alignment: center;\n"
-"}\n"
-"\n"
-"QTabBar::tab {\n"
-"	background-color: rgb(100,100,116);\n"
-"    color: white;\n"
-"    border-radius: 5px;\n"
-"	width: 200px;\n"
-"	height: 35px;\n"
-"	padding: 0px 10px;\n"
-"	margin: 0 5px;\n"
-"	font-weight: 500;\n"
-"}\n"
-"\n"
-"QTabBar::tab:selected {\n"
-"    background: rgba(254,211,44,255);\n"
-"	color: black;\n"
-"}\n"
-"\n"
-"#tab_background, #tab_backg"
-                        "round_2, #tab_background_3 {\n"
-"	background-color: rgb(76,79,86);\n"
-"	border-radius: 10%;\n"
-"}\n"
-"\n"
-"/* Qlabel style */\n"
-"QLabel {\n"
-"	color: white;\n"
-"}\n"
-"\n"
-"#book_title {\n"
-"	font-size: 20px;\n"
-"	font-weight: 500;\n"
-"}\n"
-"\n"
-"/* Buttons style */\n"
-"QPushButton {\n"
-"	background: rgba(254,211,44,255);\n"
-"	border-radius: 5px;\n"
-"	padding: 0 10px 0 10px;\n"
-"	height: 40px;\n"
-"	color: black;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"	background: rgba(204,161, 44,255);\n"
-"	color: white;\n"
-"}\n"
-"\n"
-"/* Text input style */\n"
-"QLineEdit {\n"
-"	border-radius: 10%;\n"
-"	background-color: rgba(32,36,42,255);\n"
-"	color: white;\n"
-"	padding-left: 10px;\n"
-"	height: 40px;\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"	border: 2px solid rgba(254,211,44,255);\n"
-"}\n"
-"\n"
-"/* ComboBox style */\n"
-"QComboBox {\n"
-"	border-radius: 10%;\n"
-"	background-color: rgba(32,36,42,255);\n"
-"	color: white;\n"
-"	padding-left: 10px;\n"
-"	height: 40px;\n"
-"}\n"
-"\n"
-"QComboBox:on {\n"
-"    border-bottom-left-radius: 0p"
-                        "x;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    width: 40px;\n"
-"	background-color: rgba(254,211,44,255);\n"
-"    border-top-right-radius: 10%;\n"
-"    border-bottom-right-radius: 10%;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down:on {\n"
-"	border-bottom-left-radius: 0%;\n"
-"	border-bottom-right-radius: 0%;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow {\n"
-"    image: url(:/Icons/For_QT/chevron-down.svg);\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow:on {\n"
-"    image: url(:/Icons/For_QT/chevron-up.svg);\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView {\n"
-"	/* Style of the drop-down list */\n"
-"	padding: 10px 5px;\n"
-"	color: white;\n"
-"    selection-color: black;\n"
-"    selection-background-color: rgba(254,211,44,255);\n"
-"	font-size: 10pt;\n"
-"    box-shadow: transparent;\n"
-"	background-color: rgba(32,36,42,255);\n"
-"	border-bottom-left-radius: 10%;\n"
-"	border-bottom-right-radius: 10%;\n"
-"}\n"
-"\n"
-"/* CheckBox style "
-                        "*/\n"
-"QCheckBox {\n"
-"	color: white;\n"
-"	border-radius: 10%;\n"
-"}\n"
-"\n"
-"QCheckBox::indicator:unchecked {\n"
-"	image: url(:/Icons/For_QT/square.svg);\n"
-"}\n"
-"\n"
-"QCheckBox::indicator:checked {\n"
-"	\n"
-"	image: url(:/Icons/For_QT/check-square.svg);\n"
-"}\n"
-"\n"
-"/* Scroll Area style */\n"
-"#scroll_widget {\n"
-"	background-color: transparent;\n"
-"	overflow: hidden;\n"
-"}\n"
-"\n"
-"QScrollArea, #scroll_area_container {\n"
-"	background-color: transparent;\n"
-"}\n"
-"\n"
-"#scroll_area_content {\n"
-"	background-color: rgb(76,79,86);\n"
-"	border-radius: 10%;\n"
-"}\n"
-"\n"
-"/* TitleBar style */\n"
-"#title_bar {\n"
-"	background-color: rgb(76,79,86);\n"
-"	border-top-left-radius: 10%;\n"
-"	border-top-right-radius: 10%;\n"
-"}\n"
-"\n"
-"#window_title {\n"
-"	font-size: 20px;\n"
-"}\n"
-"\n"
-"#title_bar QPushButton {\n"
-"	height: 25px;\n"
-"}\n"
-"\n"
-"#icon {\n"
-"	min-width: 25px;\n"
-"	min-height: 25px;\n"
-"	background: rgba(254,211,44,255);\n"
-"	border-radius: 5%;\n"
-"}\n"
-"\n"
-"/* ScrollBar style */\n"
-"/* VERTICAL SCR"
-                        "OLLBAR */\n"
-" QScrollBar:vertical {\n"
-"	border: 1px solid rgba(254,211,44,255);\n"
-"	background-color: rgba(32,36,42,255);\n"
-"    width: 20px;\n"
-"	border-radius: 5%;\n"
-" }\n"
-"\n"
-"/*  HANDLE BAR VERTICAL */\n"
-"QScrollBar::handle:vertical {	\n"
-"	background-color: rgb(76,79,86);\n"
-"	min-height: 20px;\n"
-"	margin: 20px 0 20px 0;\n"
-"}\n"
-"QScrollBar::handle:vertical:hover{	\n"
-"	background: rgba(204,161, 44,255);\n"
-"}\n"
-"\n"
-"/* BTN TOP - SCROLLBAR */\n"
-"QScrollBar::sub-line:vertical {\n"
-"	border: none;\n"
-"	background: rgba(254,211,44,255);\n"
-"	height: 21px;\n"
-"	border-top-left-radius: 3%;\n"
-"	border-top-right-radius: 3%;\n"
-"	subcontrol-position: top;\n"
-"	subcontrol-origin: margin;\n"
-"}\n"
-"QScrollBar::sub-line:vertical:hover {	\n"
-"	background: rgba(204,161, 44,255);\n"
-"}\n"
-"\n"
-"/* BTN BOTTOM - SCROLLBAR */\n"
-"QScrollBar::add-line:vertical {\n"
-"	border: none;\n"
-"	background: rgba(254,211,44,255);\n"
-"	height: 21px;\n"
-"	border-bottom-left-radius: 3%;\n"
-"	border-bottom-right-radius: 3%;"
-                        "\n"
-"	subcontrol-position: bottom;\n"
-"	subcontrol-origin: margin;\n"
-"}\n"
-"QScrollBar::add-line:vertical:hover {	\n"
-"	background: rgba(204,161, 44,255);\n"
-"}\n"
-"\n"
-"/* RESET ARROW */\n"
-"QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
-"	background: none;\n"
-"}\n"
-"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
-"	background: none;\n"
-"}\n"
-"\n"
-"QTextBrowser {\n"
-"	background-color: transparent;\n"
-"	color: white;\n"
-"	font-size: 16px;\n"
-"}\n"
-"\n"
-"#bbk_text, #udk_text, #isbn_text {\n"
-"	max-height: 60px;\n"
-"}\n"
-"")
+        self.main_body.setStyleSheet(u"")
         self.verticalLayout_2 = QVBoxLayout(self.main_body)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -733,6 +461,11 @@ class Ui_book_window(object):
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.book_title = QLabel(self.small_description)
         self.book_title.setObjectName(u"book_title")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.book_title.sizePolicy().hasHeightForWidth())
+        self.book_title.setSizePolicy(sizePolicy3)
         self.book_title.setFrameShape(QFrame.Box)
         self.book_title.setFrameShadow(QFrame.Plain)
         self.book_title.setLineWidth(1)
@@ -741,14 +474,14 @@ class Ui_book_window(object):
 
         self.verticalLayout_8.addWidget(self.book_title)
 
-        self.verticalSpacer = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_8.addItem(self.verticalSpacer)
 
         self.row = QFrame(self.small_description)
         self.row.setObjectName(u"row")
-        sizePolicy2.setHeightForWidth(self.row.sizePolicy().hasHeightForWidth())
-        self.row.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.row.sizePolicy().hasHeightForWidth())
+        self.row.setSizePolicy(sizePolicy3)
         self.row.setFrameShape(QFrame.StyledPanel)
         self.row.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_2 = QHBoxLayout(self.row)
@@ -757,11 +490,11 @@ class Ui_book_window(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.label_9 = QLabel(self.row)
         self.label_9.setObjectName(u"label_9")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
-        self.label_9.setSizePolicy(sizePolicy3)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
+        self.label_9.setSizePolicy(sizePolicy4)
         font = QFont()
         font.setFamilies([u"Arial"])
         self.label_9.setFont(font)
@@ -771,8 +504,8 @@ class Ui_book_window(object):
 
         self.publishings_label = QLabel(self.row)
         self.publishings_label.setObjectName(u"publishings_label")
-        sizePolicy2.setHeightForWidth(self.publishings_label.sizePolicy().hasHeightForWidth())
-        self.publishings_label.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.publishings_label.sizePolicy().hasHeightForWidth())
+        self.publishings_label.setSizePolicy(sizePolicy3)
         self.publishings_label.setLineWidth(1)
         self.publishings_label.setWordWrap(True)
 
@@ -793,8 +526,8 @@ class Ui_book_window(object):
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.label_3 = QLabel(self.row_3)
         self.label_3.setObjectName(u"label_3")
-        sizePolicy3.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
-        self.label_3.setSizePolicy(sizePolicy3)
+        sizePolicy4.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
+        self.label_3.setSizePolicy(sizePolicy4)
         self.label_3.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
         self.horizontalLayout_4.addWidget(self.label_3)
@@ -824,8 +557,8 @@ class Ui_book_window(object):
         self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
         self.label_6 = QLabel(self.row_6)
         self.label_6.setObjectName(u"label_6")
-        sizePolicy3.setHeightForWidth(self.label_6.sizePolicy().hasHeightForWidth())
-        self.label_6.setSizePolicy(sizePolicy3)
+        sizePolicy4.setHeightForWidth(self.label_6.sizePolicy().hasHeightForWidth())
+        self.label_6.setSizePolicy(sizePolicy4)
         self.label_6.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
         self.horizontalLayout_9.addWidget(self.label_6)
@@ -855,8 +588,8 @@ class Ui_book_window(object):
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.label_4 = QLabel(self.row_4)
         self.label_4.setObjectName(u"label_4")
-        sizePolicy3.setHeightForWidth(self.label_4.sizePolicy().hasHeightForWidth())
-        self.label_4.setSizePolicy(sizePolicy3)
+        sizePolicy4.setHeightForWidth(self.label_4.sizePolicy().hasHeightForWidth())
+        self.label_4.setSizePolicy(sizePolicy4)
         self.label_4.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
         self.horizontalLayout_5.addWidget(self.label_4)
@@ -885,8 +618,8 @@ class Ui_book_window(object):
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.label_5 = QLabel(self.row_5)
         self.label_5.setObjectName(u"label_5")
-        sizePolicy3.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
-        self.label_5.setSizePolicy(sizePolicy3)
+        sizePolicy4.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
+        self.label_5.setSizePolicy(sizePolicy4)
         self.label_5.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
         self.horizontalLayout_8.addWidget(self.label_5)
@@ -915,8 +648,8 @@ class Ui_book_window(object):
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.label_2 = QLabel(self.row_2)
         self.label_2.setObjectName(u"label_2")
-        sizePolicy3.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
-        self.label_2.setSizePolicy(sizePolicy3)
+        sizePolicy4.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
+        self.label_2.setSizePolicy(sizePolicy4)
         self.label_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
         self.horizontalLayout_3.addWidget(self.label_2)
@@ -933,6 +666,37 @@ class Ui_book_window(object):
 
 
         self.verticalLayout_8.addWidget(self.row_2)
+
+        self.row_10 = QFrame(self.small_description)
+        self.row_10.setObjectName(u"row_10")
+        sizePolicy2.setHeightForWidth(self.row_10.sizePolicy().hasHeightForWidth())
+        self.row_10.setSizePolicy(sizePolicy2)
+        self.row_10.setFrameShape(QFrame.StyledPanel)
+        self.row_10.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_11 = QHBoxLayout(self.row_10)
+        self.horizontalLayout_11.setSpacing(10)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.label_7 = QLabel(self.row_10)
+        self.label_7.setObjectName(u"label_7")
+        sizePolicy4.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
+        self.label_7.setSizePolicy(sizePolicy4)
+        self.label_7.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.horizontalLayout_11.addWidget(self.label_7)
+
+        self.discipline_label = QLabel(self.row_10)
+        self.discipline_label.setObjectName(u"discipline_label")
+        sizePolicy2.setHeightForWidth(self.discipline_label.sizePolicy().hasHeightForWidth())
+        self.discipline_label.setSizePolicy(sizePolicy2)
+        self.discipline_label.setLineWidth(1)
+        self.discipline_label.setScaledContents(False)
+        self.discipline_label.setWordWrap(True)
+
+        self.horizontalLayout_11.addWidget(self.discipline_label, 0, Qt.AlignTop)
+
+
+        self.verticalLayout_8.addWidget(self.row_10)
 
 
         self.horizontalLayout.addWidget(self.small_description)
@@ -1047,11 +811,11 @@ class Ui_book_window(object):
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
         self.label_11 = QLabel(self.row_7)
         self.label_11.setObjectName(u"label_11")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.label_11.sizePolicy().hasHeightForWidth())
-        self.label_11.setSizePolicy(sizePolicy4)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.label_11.sizePolicy().hasHeightForWidth())
+        self.label_11.setSizePolicy(sizePolicy5)
         self.label_11.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.label_11.setMargin(0)
 
@@ -1059,10 +823,17 @@ class Ui_book_window(object):
 
         self.bbk_text = QTextBrowser(self.row_7)
         self.bbk_text.setObjectName(u"bbk_text")
+        sizePolicy6 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.bbk_text.sizePolicy().hasHeightForWidth())
+        self.bbk_text.setSizePolicy(sizePolicy6)
         self.bbk_text.setMinimumSize(QSize(0, 0))
-        self.bbk_text.setMaximumSize(QSize(16777215, 60))
+        self.bbk_text.setMaximumSize(QSize(16777215, 30))
+        self.bbk_text.setFocusPolicy(Qt.NoFocus)
+        self.bbk_text.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
-        self.verticalLayout_15.addWidget(self.bbk_text)
+        self.verticalLayout_15.addWidget(self.bbk_text, 0, Qt.AlignTop)
 
 
         self.verticalLayout_18.addWidget(self.row_7, 0, Qt.AlignTop)
@@ -1079,8 +850,8 @@ class Ui_book_window(object):
         self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
         self.label_13 = QLabel(self.row_8)
         self.label_13.setObjectName(u"label_13")
-        sizePolicy4.setHeightForWidth(self.label_13.sizePolicy().hasHeightForWidth())
-        self.label_13.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.label_13.sizePolicy().hasHeightForWidth())
+        self.label_13.setSizePolicy(sizePolicy5)
         self.label_13.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.label_13.setMargin(0)
 
@@ -1088,8 +859,12 @@ class Ui_book_window(object):
 
         self.udk_text = QTextBrowser(self.row_8)
         self.udk_text.setObjectName(u"udk_text")
+        sizePolicy6.setHeightForWidth(self.udk_text.sizePolicy().hasHeightForWidth())
+        self.udk_text.setSizePolicy(sizePolicy6)
         self.udk_text.setMinimumSize(QSize(0, 0))
-        self.udk_text.setMaximumSize(QSize(16777215, 60))
+        self.udk_text.setMaximumSize(QSize(16777215, 30))
+        self.udk_text.setFocusPolicy(Qt.NoFocus)
+        self.udk_text.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
         self.verticalLayout_16.addWidget(self.udk_text)
 
@@ -1108,8 +883,8 @@ class Ui_book_window(object):
         self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
         self.label_15 = QLabel(self.row_9)
         self.label_15.setObjectName(u"label_15")
-        sizePolicy4.setHeightForWidth(self.label_15.sizePolicy().hasHeightForWidth())
-        self.label_15.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.label_15.sizePolicy().hasHeightForWidth())
+        self.label_15.setSizePolicy(sizePolicy5)
         self.label_15.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.label_15.setMargin(0)
 
@@ -1117,8 +892,12 @@ class Ui_book_window(object):
 
         self.isbn_text = QTextBrowser(self.row_9)
         self.isbn_text.setObjectName(u"isbn_text")
+        sizePolicy6.setHeightForWidth(self.isbn_text.sizePolicy().hasHeightForWidth())
+        self.isbn_text.setSizePolicy(sizePolicy6)
         self.isbn_text.setMinimumSize(QSize(0, 0))
-        self.isbn_text.setMaximumSize(QSize(16777215, 60))
+        self.isbn_text.setMaximumSize(QSize(16777215, 30))
+        self.isbn_text.setFocusPolicy(Qt.NoFocus)
+        self.isbn_text.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.isbn_text.setAcceptRichText(True)
 
         self.verticalLayout_17.addWidget(self.isbn_text)
@@ -1151,7 +930,7 @@ class Ui_book_window(object):
 
         self.retranslateUi(book_window)
 
-        self.big_description.setCurrentIndex(1)
+        self.big_description.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(book_window)
@@ -1178,6 +957,8 @@ class Ui_book_window(object):
         self.education_lvl_label.setText(QCoreApplication.translate("book_window", u"\u0411\u0430\u043a\u0430\u043b\u0430\u0432\u0440", None))
         self.label_2.setText(QCoreApplication.translate("book_window", u"\u0410\u0432\u0442\u043e\u0440\u044b:", None))
         self.authors_label.setText(QCoreApplication.translate("book_window", u"\u0424\u0430\u043c\u0438\u043b\u0438\u044f \u0418. \u041e., \u0424\u0430\u043c\u0438\u043b\u0438\u044f \u0418. \u041e., \u0424\u0430\u043c\u0438\u043b\u0438\u044f \u0418. \u041e., \u0424\u0430\u043c\u0438\u043b\u0438\u044f \u0418. \u041e., \u0424\u0430\u043c\u0438\u043b\u0438\u044f \u0418. \u041e.", None))
+        self.label_7.setText(QCoreApplication.translate("book_window", u"\u0414\u0438\u0441\u0446\u0438\u043f\u043b\u0438\u043d\u044b:", None))
+        self.discipline_label.setText(QCoreApplication.translate("book_window", u"\u0414\u0438\u0441\u0446\u0438\u043f\u043b\u0438\u043d\u0430 1, \u0414\u0438\u0441\u0446\u0438\u043f\u043b\u0438\u043d\u0430 1, \u0414\u0438\u0441\u0446\u0438\u043f\u043b\u0438\u043d\u0430 1, \u0414\u0438\u0441\u0446\u0438\u043f\u043b\u0438\u043d\u0430 1", None))
         self.open_library_btn.setText(QCoreApplication.translate("book_window", u" \u0412 \u0431\u0438\u0431\u043b\u0438\u043e\u0442\u0435\u043a\u0443", None))
         self.bibliographic_record_text.setHtml(QCoreApplication.translate("book_window", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -1189,7 +970,7 @@ class Ui_book_window(object):
         self.annotation_text.setHtml(QCoreApplication.translate("book_window", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Arial'; font-size:16px; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'Arial'; font-size:14px; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Roboto','sans-serif'; font-size:14px; font-weight:296; color:#ffffff; background-color:transparent;\">\u0423\u0447\u0435\u0431\u043d\u043e-\u043c\u0435\u0442\u043e\u0434\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u043f\u043e\u0441\u043e\u0431\u0438\u0435 \u00ab\u0425\u0443\u0434\u043e\u0436\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0430\u044f \u043a\u0435\u0440\u0430\u043c\u0438\u043a\u0430\u00bb \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043b\u0435\u043d\u043e \u0432 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438"
                         "\u0438 \u0441 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u043e\u0439 \u043f\u0440\u043e\u0444\u0435\u0441\u0441\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u043c\u043e\u0434\u0443\u043b\u044f \u00ab\u041f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u043e-\u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0434\u0435\u044f\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c\u00bb, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0447\u0430\u0441\u0442\u044c\u044e \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0439 \u043f\u0440\u043e\u0444\u0435\u0441\u0441\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0439 \u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0439 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b \u0432 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441 \u0424\u0413\u041e\u0421 \u0421\u041f"
                         "\u041e \u043f\u043e \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438 54.02.02 \u00ab\u0414\u0435\u043a\u043e\u0440\u0430\u0442\u0438\u0432\u043d\u043e-\u043f\u0440\u0438\u043a\u043b\u0430\u0434\u043d\u043e\u0435 \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u043e \u0438 \u043d\u0430\u0440\u043e\u0434\u043d\u044b\u0435 \u043f\u0440\u043e\u043c\u044b\u0441\u043b\u044b\u00bb (\u043f\u043e \u0432\u0438\u0434\u0430\u043c). \u0412 \u043f\u043e\u0441\u043e\u0431\u0438\u0438 \u0443\u0434\u0435\u043b\u0435\u043d\u043e \u0432\u043d\u0438\u043c\u0430\u043d\u0438\u0435 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u043c \u044d\u0442\u0430\u043f\u0430\u043c \u0440\u0430\u0431\u043e\u0442\u044b: \u0437\u0430\u0433\u043e\u0442\u043e\u0432\u043a\u0435 \u0433\u043b\u0438\u043d\u044b, \u0442\u0435\u0445\u043d\u0438\u043a\u0430\u043c \u043b\u0435\u043f\u043a\u0438, \u0432\u0438\u0434\u0430\u043c \u0438 \u0441\u043f\u043e\u0441\u043e\u0431\u0430\u043c \u043d\u0430\u043d\u0435\u0441\u0435\u043d\u0438\u044f"

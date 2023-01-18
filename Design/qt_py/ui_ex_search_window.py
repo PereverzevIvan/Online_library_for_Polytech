@@ -26,14 +26,14 @@ class Ui_ex_search_window(object):
     def setupUi(self, ex_search_window):
         if not ex_search_window.objectName():
             ex_search_window.setObjectName(u"ex_search_window")
-        ex_search_window.resize(607, 622)
-        ex_search_window.setMinimumSize(QSize(607, 622))
-        ex_search_window.setMaximumSize(QSize(607, 622))
+        ex_search_window.resize(849, 674)
+        ex_search_window.setMinimumSize(QSize(849, 674))
+        ex_search_window.setMaximumSize(QSize(849, 674))
         ex_search_window.setStyleSheet(u"/* General */\n"
 "* {\n"
 "	margin: 0;\n"
 "	padding: 0;\n"
-"	font-size: 16px;\n"
+"	font-size: 14px;\n"
 "	outline: none;\n"
 "	font-family: \"Arial\";\n"
 "}\n"
@@ -48,7 +48,8 @@ class Ui_ex_search_window(object):
 "}\n"
 "\n"
 "#error_label {\n"
-"	margin-top: 15px;\n"
+"	font-size: 16px;\n"
+"	font-weight: 500;\n"
 "}\n"
 "\n"
 "#inputs_area {\n"
@@ -88,9 +89,9 @@ class Ui_ex_search_window(object):
 "}\n"
 "\n"
 "/* Buttons style */\n"
-"QPushButton {\n"
-"	backgro"
-                        "und: rgba(254,211,44,255);\n"
+"QPus"
+                        "hButton {\n"
+"	background: rgba(254,211,44,255);\n"
 "	border-radius: 5px;\n"
 "	padding: 0 10px 0 10px;\n"
 "	height: 40px;\n"
@@ -127,16 +128,21 @@ class Ui_ex_search_window(object):
 "QComboBox:on {\n"
 "    border-bottom-left-radius: 0px;\n"
 "    border-bottom-right-radius: 0px;\n"
+"	border-left: 2px solid rgba(254,211,44,255);\n"
+"}\n"
+"\n"
+"QComboBox:focus {\n"
+"	border-left: 2px solid rgba(254,211,44,255);\n"
 "}\n"
 "\n"
 "QComboBox::drop-down {\n"
 "    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
+"    subcontrol-posit"
+                        "ion: top right;\n"
 "    width: 40px;\n"
 "	background-color: rgba(254,211,44,255);\n"
-"    border-top-right-radius: 10%;\n"
-"    border-bottom-right-radius:"
-                        " 10%;\n"
+"    border-top-right-radius: 6%;\n"
+"    border-bottom-right-radius: 6%;\n"
 "}\n"
 "\n"
 "QComboBox::drop-down:on {\n"
@@ -172,7 +178,8 @@ class Ui_ex_search_window(object):
 "}\n"
 "\n"
 "QCheckBox::indicator:unchecked {\n"
-"	image: url(:/Icons/For_QT/square.svg);\n"
+"	image: url(:/Icons/For_QT/sq"
+                        "uare.svg);\n"
 "}\n"
 "\n"
 "QCheckBox::indicator:checked {\n"
@@ -181,8 +188,7 @@ class Ui_ex_search_window(object):
 "}\n"
 "\n"
 "/* Scroll Area style */\n"
-""
-                        "#scroll_widget {\n"
+"#scroll_widget {\n"
 "	background-color: transparent;\n"
 "}\n"
 "\n"
@@ -203,7 +209,7 @@ class Ui_ex_search_window(object):
 "}\n"
 "\n"
 "#window_title {\n"
-"	font-size: 20px;\n"
+"	font-size: 18px;\n"
 "}\n"
 "\n"
 "#title_bar QPushButton {\n"
@@ -226,14 +232,14 @@ class Ui_ex_search_window(object):
 "	border-radius: 0px;\n"
 " }\n"
 "\n"
-"/*  HANDLE BAR VERTICAL */\n"
+"/*  HA"
+                        "NDLE BAR VERTICAL */\n"
 "QScrollBar::handle:vertical {	\n"
 "	background-color: rgb(76,79,86);\n"
 "	min-height: 20px;\n"
 "	margin: 20px 0 20px 0;\n"
 "}\n"
-"Q"
-                        "ScrollBar::handle:vertical:hover{	\n"
+"QScrollBar::handle:vertical:hover{	\n"
 "	background: rgba(204,161, 44,255);\n"
 "}\n"
 "\n"
@@ -266,11 +272,11 @@ class Ui_ex_search_window(object):
 "}\n"
 "\n"
 "/* RESET ARROW */\n"
-"QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
+""
+                        "QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
 "	background: none;\n"
 "}\n"
-"QScrollBar::add-page:vertical, QScrollBar::sub-page:verti"
-                        "cal {\n"
+"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
 "	background: none;\n"
 "}\n"
 "\n"
@@ -379,6 +385,11 @@ class Ui_ex_search_window(object):
         self.verticalLayout_3.setContentsMargins(10, 10, 10, 0)
         self.inputs_area = QWidget(self.content)
         self.inputs_area.setObjectName(u"inputs_area")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.inputs_area.sizePolicy().hasHeightForWidth())
+        self.inputs_area.setSizePolicy(sizePolicy1)
         self.verticalLayout_4 = QVBoxLayout(self.inputs_area)
         self.verticalLayout_4.setSpacing(10)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -398,15 +409,19 @@ class Ui_ex_search_window(object):
         self.horizontalLayout = QHBoxLayout(self.input)
         self.horizontalLayout.setSpacing(10)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setContentsMargins(0, 2, 0, 2)
         self.label = QLabel(self.input)
         self.label.setObjectName(u"label")
 
         self.horizontalLayout.addWidget(self.label)
 
+        self.horizontalSpacer_10 = QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_10)
+
         self.string_input = QLineEdit(self.input)
         self.string_input.setObjectName(u"string_input")
-        self.string_input.setMinimumSize(QSize(435, 0))
+        self.string_input.setMinimumSize(QSize(680, 0))
 
         self.horizontalLayout.addWidget(self.string_input)
 
@@ -420,7 +435,7 @@ class Ui_ex_search_window(object):
         self.horizontalLayout_10 = QHBoxLayout(self.input_1)
         self.horizontalLayout_10.setSpacing(10)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_10.setContentsMargins(0, 2, 0, 2)
         self.in_headings = QCheckBox(self.input_1)
         self.in_headings.setObjectName(u"in_headings")
 
@@ -437,6 +452,37 @@ class Ui_ex_search_window(object):
 
         self.verticalLayout_4.addWidget(self.frame)
 
+        self.input_4 = QFrame(self.inputs_area)
+        self.input_4.setObjectName(u"input_4")
+        self.input_4.setFrameShape(QFrame.StyledPanel)
+        self.input_4.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.input_4)
+        self.horizontalLayout_4.setSpacing(10)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 2, 0, 2)
+        self.label_4 = QLabel(self.input_4)
+        self.label_4.setObjectName(u"label_4")
+
+        self.horizontalLayout_4.addWidget(self.label_4)
+
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_4)
+
+        self.year_input = QLineEdit(self.input_4)
+        self.year_input.setObjectName(u"year_input")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.year_input.sizePolicy().hasHeightForWidth())
+        self.year_input.setSizePolicy(sizePolicy2)
+        self.year_input.setMinimumSize(QSize(680, 0))
+
+        self.horizontalLayout_4.addWidget(self.year_input)
+
+
+        self.verticalLayout_4.addWidget(self.input_4)
+
         self.input_2 = QFrame(self.inputs_area)
         self.input_2.setObjectName(u"input_2")
         self.input_2.setFrameShape(QFrame.StyledPanel)
@@ -444,7 +490,7 @@ class Ui_ex_search_window(object):
         self.horizontalLayout_2 = QHBoxLayout(self.input_2)
         self.horizontalLayout_2.setSpacing(10)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setContentsMargins(0, 2, 0, 2)
         self.label_2 = QLabel(self.input_2)
         self.label_2.setObjectName(u"label_2")
 
@@ -456,7 +502,10 @@ class Ui_ex_search_window(object):
 
         self.publishings_combobox = QComboBox(self.input_2)
         self.publishings_combobox.setObjectName(u"publishings_combobox")
-        self.publishings_combobox.setMinimumSize(QSize(435, 0))
+        sizePolicy2.setHeightForWidth(self.publishings_combobox.sizePolicy().hasHeightForWidth())
+        self.publishings_combobox.setSizePolicy(sizePolicy2)
+        self.publishings_combobox.setMinimumSize(QSize(680, 0))
+        self.publishings_combobox.setEditable(True)
 
         self.horizontalLayout_2.addWidget(self.publishings_combobox)
 
@@ -470,7 +519,7 @@ class Ui_ex_search_window(object):
         self.horizontalLayout_3 = QHBoxLayout(self.input_3)
         self.horizontalLayout_3.setSpacing(10)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setContentsMargins(0, 2, 0, 2)
         self.label_3 = QLabel(self.input_3)
         self.label_3.setObjectName(u"label_3")
 
@@ -480,40 +529,17 @@ class Ui_ex_search_window(object):
 
         self.horizontalLayout_3.addItem(self.horizontalSpacer_2)
 
-        self.author_input = QLineEdit(self.input_3)
-        self.author_input.setObjectName(u"author_input")
-        self.author_input.setMinimumSize(QSize(435, 0))
+        self.author_combobox = QComboBox(self.input_3)
+        self.author_combobox.setObjectName(u"author_combobox")
+        sizePolicy2.setHeightForWidth(self.author_combobox.sizePolicy().hasHeightForWidth())
+        self.author_combobox.setSizePolicy(sizePolicy2)
+        self.author_combobox.setMinimumSize(QSize(680, 0))
+        self.author_combobox.setEditable(True)
 
-        self.horizontalLayout_3.addWidget(self.author_input)
+        self.horizontalLayout_3.addWidget(self.author_combobox)
 
 
         self.verticalLayout_4.addWidget(self.input_3)
-
-        self.input_4 = QFrame(self.inputs_area)
-        self.input_4.setObjectName(u"input_4")
-        self.input_4.setFrameShape(QFrame.StyledPanel)
-        self.input_4.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_4 = QHBoxLayout(self.input_4)
-        self.horizontalLayout_4.setSpacing(10)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.label_4 = QLabel(self.input_4)
-        self.label_4.setObjectName(u"label_4")
-
-        self.horizontalLayout_4.addWidget(self.label_4)
-
-        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_4.addItem(self.horizontalSpacer_4)
-
-        self.year_input = QLineEdit(self.input_4)
-        self.year_input.setObjectName(u"year_input")
-        self.year_input.setMinimumSize(QSize(435, 0))
-
-        self.horizontalLayout_4.addWidget(self.year_input)
-
-
-        self.verticalLayout_4.addWidget(self.input_4)
 
         self.input_5 = QFrame(self.inputs_area)
         self.input_5.setObjectName(u"input_5")
@@ -522,7 +548,7 @@ class Ui_ex_search_window(object):
         self.horizontalLayout_5 = QHBoxLayout(self.input_5)
         self.horizontalLayout_5.setSpacing(10)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_5.setContentsMargins(0, 2, 0, 2)
         self.label_5 = QLabel(self.input_5)
         self.label_5.setObjectName(u"label_5")
 
@@ -532,11 +558,14 @@ class Ui_ex_search_window(object):
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_5)
 
-        self.isbn_input = QLineEdit(self.input_5)
-        self.isbn_input.setObjectName(u"isbn_input")
-        self.isbn_input.setMinimumSize(QSize(435, 0))
+        self.isbn_combobox = QComboBox(self.input_5)
+        self.isbn_combobox.setObjectName(u"isbn_combobox")
+        sizePolicy2.setHeightForWidth(self.isbn_combobox.sizePolicy().hasHeightForWidth())
+        self.isbn_combobox.setSizePolicy(sizePolicy2)
+        self.isbn_combobox.setMinimumSize(QSize(680, 0))
+        self.isbn_combobox.setEditable(True)
 
-        self.horizontalLayout_5.addWidget(self.isbn_input)
+        self.horizontalLayout_5.addWidget(self.isbn_combobox)
 
 
         self.verticalLayout_4.addWidget(self.input_5)
@@ -548,14 +577,14 @@ class Ui_ex_search_window(object):
         self.horizontalLayout_8 = QHBoxLayout(self.input_6)
         self.horizontalLayout_8.setSpacing(10)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_8.setContentsMargins(0, 2, 0, 2)
         self.label_6 = QLabel(self.input_6)
         self.label_6.setObjectName(u"label_6")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.label_6.sizePolicy().hasHeightForWidth())
-        self.label_6.setSizePolicy(sizePolicy1)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.label_6.sizePolicy().hasHeightForWidth())
+        self.label_6.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_8.addWidget(self.label_6)
 
@@ -565,7 +594,10 @@ class Ui_ex_search_window(object):
 
         self.udk_combobox = QComboBox(self.input_6)
         self.udk_combobox.setObjectName(u"udk_combobox")
-        self.udk_combobox.setMinimumSize(QSize(435, 0))
+        sizePolicy2.setHeightForWidth(self.udk_combobox.sizePolicy().hasHeightForWidth())
+        self.udk_combobox.setSizePolicy(sizePolicy2)
+        self.udk_combobox.setMinimumSize(QSize(680, 0))
+        self.udk_combobox.setEditable(True)
 
         self.horizontalLayout_8.addWidget(self.udk_combobox)
 
@@ -579,11 +611,11 @@ class Ui_ex_search_window(object):
         self.horizontalLayout_9 = QHBoxLayout(self.input_7)
         self.horizontalLayout_9.setSpacing(10)
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_9.setContentsMargins(0, 2, 0, 2)
         self.label_7 = QLabel(self.input_7)
         self.label_7.setObjectName(u"label_7")
-        sizePolicy1.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
-        self.label_7.setSizePolicy(sizePolicy1)
+        sizePolicy3.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
+        self.label_7.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_9.addWidget(self.label_7)
 
@@ -593,7 +625,10 @@ class Ui_ex_search_window(object):
 
         self.bbk_combobox = QComboBox(self.input_7)
         self.bbk_combobox.setObjectName(u"bbk_combobox")
-        self.bbk_combobox.setMinimumSize(QSize(435, 0))
+        sizePolicy2.setHeightForWidth(self.bbk_combobox.sizePolicy().hasHeightForWidth())
+        self.bbk_combobox.setSizePolicy(sizePolicy2)
+        self.bbk_combobox.setMinimumSize(QSize(680, 0))
+        self.bbk_combobox.setEditable(True)
 
         self.horizontalLayout_9.addWidget(self.bbk_combobox)
 
@@ -607,11 +642,11 @@ class Ui_ex_search_window(object):
         self.horizontalLayout_11 = QHBoxLayout(self.input_8)
         self.horizontalLayout_11.setSpacing(10)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_11.setContentsMargins(0, 2, 0, 2)
         self.label_8 = QLabel(self.input_8)
         self.label_8.setObjectName(u"label_8")
-        sizePolicy1.setHeightForWidth(self.label_8.sizePolicy().hasHeightForWidth())
-        self.label_8.setSizePolicy(sizePolicy1)
+        sizePolicy3.setHeightForWidth(self.label_8.sizePolicy().hasHeightForWidth())
+        self.label_8.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_11.addWidget(self.label_8)
 
@@ -621,17 +656,56 @@ class Ui_ex_search_window(object):
 
         self.type_combobox = QComboBox(self.input_8)
         self.type_combobox.setObjectName(u"type_combobox")
-        self.type_combobox.setMinimumSize(QSize(435, 0))
+        sizePolicy2.setHeightForWidth(self.type_combobox.sizePolicy().hasHeightForWidth())
+        self.type_combobox.setSizePolicy(sizePolicy2)
+        self.type_combobox.setMinimumSize(QSize(680, 0))
+        self.type_combobox.setEditable(True)
 
         self.horizontalLayout_11.addWidget(self.type_combobox)
 
 
         self.verticalLayout_4.addWidget(self.input_8)
 
+        self.input_9 = QFrame(self.inputs_area)
+        self.input_9.setObjectName(u"input_9")
+        self.input_9.setFrameShape(QFrame.StyledPanel)
+        self.input_9.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_12 = QHBoxLayout(self.input_9)
+        self.horizontalLayout_12.setSpacing(10)
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.horizontalLayout_12.setContentsMargins(0, 2, 0, 2)
+        self.label_9 = QLabel(self.input_9)
+        self.label_9.setObjectName(u"label_9")
+        sizePolicy3.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
+        self.label_9.setSizePolicy(sizePolicy3)
+
+        self.horizontalLayout_12.addWidget(self.label_9)
+
+        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_12.addItem(self.horizontalSpacer_9)
+
+        self.discipline_combobox = QComboBox(self.input_9)
+        self.discipline_combobox.setObjectName(u"discipline_combobox")
+        sizePolicy2.setHeightForWidth(self.discipline_combobox.sizePolicy().hasHeightForWidth())
+        self.discipline_combobox.setSizePolicy(sizePolicy2)
+        self.discipline_combobox.setMinimumSize(QSize(680, 0))
+        self.discipline_combobox.setEditable(True)
+
+        self.horizontalLayout_12.addWidget(self.discipline_combobox)
+
+
+        self.verticalLayout_4.addWidget(self.input_9)
+
+        self.error_label = QLabel(self.inputs_area)
+        self.error_label.setObjectName(u"error_label")
+
+        self.verticalLayout_4.addWidget(self.error_label)
+
         self.buttons = QDialogButtonBox(self.inputs_area)
         self.buttons.setObjectName(u"buttons")
         self.buttons.setOrientation(Qt.Horizontal)
-        self.buttons.setStandardButtons(QDialogButtonBox.Cancel|QDialogButtonBox.Ok)
+        self.buttons.setStandardButtons(QDialogButtonBox.Ok|QDialogButtonBox.Reset)
         self.buttons.setCenterButtons(True)
 
         self.verticalLayout_4.addWidget(self.buttons)
@@ -671,15 +745,15 @@ class Ui_ex_search_window(object):
         self.label.setText(QCoreApplication.translate("ex_search_window", u"\u0418\u0441\u043a\u043e\u043c\u0430\u044f \u0441\u0442\u0440\u043e\u043a\u0430:", None))
         self.in_headings.setText(QCoreApplication.translate("ex_search_window", u"\u0418\u0441\u043a\u0430\u0442\u044c \u0432 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0438", None))
         self.in_annotation.setText(QCoreApplication.translate("ex_search_window", u"\u0418\u0441\u043a\u0430\u0442\u044c \u0432 \u0430\u043d\u043d\u043e\u0442\u0430\u0446\u0438\u0438", None))
-        self.label_2.setText(QCoreApplication.translate("ex_search_window", u"\u0418\u0437\u0434\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e:", None))
-        self.label_3.setText(QCoreApplication.translate("ex_search_window", u"\u0410\u0432\u0442\u043e\u0440\u044b:", None))
-        self.author_input.setText("")
         self.label_4.setText(QCoreApplication.translate("ex_search_window", u"\u0413\u043e\u0434 \u0438\u0437\u0434\u0430\u043d\u0438\u044f: ", None))
         self.year_input.setText("")
+        self.label_2.setText(QCoreApplication.translate("ex_search_window", u"\u0418\u0437\u0434\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e:", None))
+        self.label_3.setText(QCoreApplication.translate("ex_search_window", u"\u0410\u0432\u0442\u043e\u0440\u044b:", None))
         self.label_5.setText(QCoreApplication.translate("ex_search_window", u"\u041d\u043e\u043c\u0435\u0440 ISBN:", None))
-        self.isbn_input.setText("")
         self.label_6.setText(QCoreApplication.translate("ex_search_window", u"\u041d\u043e\u043c\u0435\u0440 \u0423\u0414\u041a:", None))
         self.label_7.setText(QCoreApplication.translate("ex_search_window", u"\u041d\u043e\u043c\u0435\u0440 \u0411\u0411\u041a:", None))
         self.label_8.setText(QCoreApplication.translate("ex_search_window", u"\u0412\u0438\u0434 \u043f\u043e\u0441\u043e\u0431\u0438\u044f:", None))
+        self.label_9.setText(QCoreApplication.translate("ex_search_window", u"\u0414\u0438\u0441\u0446\u0438\u043f\u043b\u0438\u043d\u0430:", None))
+        self.error_label.setText(QCoreApplication.translate("ex_search_window", u"\u0417\u0434\u0435\u0441\u044c \u0431\u0443\u0434\u0435\u0442 \u043e\u0448\u0438\u0431\u043a\u0430", None))
     # retranslateUi
 
