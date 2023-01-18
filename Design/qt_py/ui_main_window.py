@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 ################################################################################
 ## Form generated from reading UI file 'main_window.ui'
@@ -56,7 +56,6 @@ class Ui_main_window(object):
 "}\n"
 "\n"
 "#error_label {\n"
-"	margin-top: 15px;\n"
 "}\n"
 "\n"
 "/* Tabs style */\n"
@@ -88,9 +87,9 @@ class Ui_main_window(object):
 "}\n"
 "\n"
 "/* Qlabel style */\n"
-"Q"
-                        "Label {\n"
-"	color: white;\n"
+"QLabel {\n"
+"	color: whi"
+                        "te;\n"
 "}\n"
 "\n"
 "/* Buttons style */\n"
@@ -139,9 +138,9 @@ class Ui_main_window(object):
 "QComboBox::drop-down {\n"
 "    subcontrol-origin: padding;\n"
 "    subcontrol-position: top right;\n"
+"    width: 40px;\n"
 ""
-                        "    width: 40px;\n"
-"	background-color: rgba(254,211,44,255);\n"
+                        "	background-color: rgba(254,211,44,255);\n"
 "    border-top-right-radius: 10%;\n"
 "    border-bottom-right-radius: 10%;\n"
 "}\n"
@@ -181,9 +180,9 @@ class Ui_main_window(object):
 "QCheckBox::indicator:unchecked {\n"
 "	image: url(:/Icons/For_QT/square.svg);\n"
 "}\n"
-""
-                        "\n"
-"QCheckBox::indicator:checked {\n"
+"\n"
+"QCheckBox::in"
+                        "dicator:checked {\n"
 "	\n"
 "	image: url(:/Icons/For_QT/check-square.svg);\n"
 "}\n"
@@ -234,8 +233,8 @@ class Ui_main_window(object):
 " }\n"
 "\n"
 "/*  HANDLE BAR VERTICAL */\n"
-""
-                        "QScrollBar::handle:vertical {	\n"
+"QScrollBar::ha"
+                        "ndle:vertical {	\n"
 "	background-color: rgb(76,79,86);\n"
 "	min-height: 20px;\n"
 "	margin: 20px 0 20px 0;\n"
@@ -273,12 +272,17 @@ class Ui_main_window(object):
 "}\n"
 "\n"
 "/* RESET ARROW */\n"
-"QScrollBar::up-arrow:ver"
-                        "tical, QScrollBar::down-arrow:vertical {\n"
+"QScrollBar::up-arrow:vertical, QScroll"
+                        "Bar::down-arrow:vertical {\n"
 "	background: none;\n"
 "}\n"
 "QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
 "	background: none;\n"
+"}\n"
+"\n"
+"/* Pagination style */\n"
+"#pagination_label {\n"
+"	font-weight: 500;\n"
 "}")
         self.verticalLayout = QVBoxLayout(self.central_widget)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -596,7 +600,15 @@ class Ui_main_window(object):
 
         self.verticalLayout_15.addWidget(self.instrumental_menu, 0, Qt.AlignTop)
 
-        self.error_label = QLabel(self.widget)
+        self.pagination = QFrame(self.widget)
+        self.pagination.setObjectName(u"pagination")
+        self.pagination.setFrameShape(QFrame.StyledPanel)
+        self.pagination.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_9 = QHBoxLayout(self.pagination)
+        self.horizontalLayout_9.setSpacing(5)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.horizontalLayout_9.setContentsMargins(10, 5, 10, 5)
+        self.error_label = QLabel(self.pagination)
         self.error_label.setObjectName(u"error_label")
         sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         sizePolicy3.setHorizontalStretch(0)
@@ -608,7 +620,42 @@ class Ui_main_window(object):
         self.error_label.setMargin(0)
         self.error_label.setIndent(-1)
 
-        self.verticalLayout_15.addWidget(self.error_label, 0, Qt.AlignBottom)
+        self.horizontalLayout_9.addWidget(self.error_label)
+
+        self.pagination_btns = QFrame(self.pagination)
+        self.pagination_btns.setObjectName(u"pagination_btns")
+        self.pagination_btns.setFrameShape(QFrame.StyledPanel)
+        self.pagination_btns.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_8 = QHBoxLayout(self.pagination_btns)
+        self.horizontalLayout_8.setSpacing(10)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.pagination_prev_btn = QPushButton(self.pagination_btns)
+        self.pagination_prev_btn.setObjectName(u"pagination_prev_btn")
+        icon7 = QIcon()
+        icon7.addFile(u":/Icons/For_QT/chevrons-left.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pagination_prev_btn.setIcon(icon7)
+
+        self.horizontalLayout_8.addWidget(self.pagination_prev_btn)
+
+        self.pagination_label = QLabel(self.pagination_btns)
+        self.pagination_label.setObjectName(u"pagination_label")
+
+        self.horizontalLayout_8.addWidget(self.pagination_label)
+
+        self.pagination_next_btn = QPushButton(self.pagination_btns)
+        self.pagination_next_btn.setObjectName(u"pagination_next_btn")
+        icon8 = QIcon()
+        icon8.addFile(u":/Icons/For_QT/chevrons-right.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pagination_next_btn.setIcon(icon8)
+
+        self.horizontalLayout_8.addWidget(self.pagination_next_btn)
+
+
+        self.horizontalLayout_9.addWidget(self.pagination_btns)
+
+
+        self.verticalLayout_15.addWidget(self.pagination)
 
         self.scroll_widget = QWidget(self.widget)
         self.scroll_widget.setObjectName(u"scroll_widget")
@@ -623,7 +670,7 @@ class Ui_main_window(object):
         self.scroll_area.setWidgetResizable(True)
         self.scroll_area_container = QWidget()
         self.scroll_area_container.setObjectName(u"scroll_area_container")
-        self.scroll_area_container.setGeometry(QRect(0, 0, 683, 274))
+        self.scroll_area_container.setGeometry(QRect(0, 0, 683, 257))
         self.verticalLayout_5 = QVBoxLayout(self.scroll_area_container)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -673,7 +720,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_menu.setCurrentIndex(0)
+        self.tab_menu.setCurrentIndex(2)
         self.sort_params.setCurrentIndex(-1)
 
 
@@ -705,6 +752,9 @@ class Ui_main_window(object):
         self.checkBox.setText(QCoreApplication.translate("main_window", u"\u041f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e", None))
         self.sort_btn.setText(QCoreApplication.translate("main_window", u" \u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
         self.tab_menu.setTabText(self.tab_menu.indexOf(self.sort_tab), QCoreApplication.translate("main_window", u"\u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", None))
-        self.error_label.setText(QCoreApplication.translate("main_window", u"\u0417\u0434\u0435\u0441\u044c \u0434\u043e\u043b\u0436\u043d\u043e \u0431\u044b\u0442\u044c \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435 \u043e\u0431 \u043e\u0448\u0438\u0431\u043a\u0435", None))
+        self.error_label.setText(QCoreApplication.translate("main_window", u"\u0411\u044b\u043b\u043e \u043d\u0430\u0439\u0434\u0435\u043d\u043e 100 \u043a\u043d\u0438\u0433", None))
+        self.pagination_prev_btn.setText("")
+        self.pagination_label.setText(QCoreApplication.translate("main_window", u"01/10", None))
+        self.pagination_next_btn.setText("")
     # retranslateUi
 

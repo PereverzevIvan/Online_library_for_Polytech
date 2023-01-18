@@ -6,6 +6,7 @@ import sys
 from Design.qt_py import ui_main_window, ui_book_card, ui_ex_search_window, ui_book_window
 import webbrowser
 import pandas as pd
+from math import ceil
 
 GLOBAL_STATE = 0
 GLOBAL_STATE_2 = 0
@@ -27,6 +28,8 @@ class MainWindow(QMainWindow, ui_main_window.Ui_main_window):
         self.title_bar.mouseMoveEvent = self.move_window
         self.search_btn.clicked.connect(self.common_search)
         self.ex_search_btn.clicked.connect(self.ex_search)
+        self.pagination_next_btn.clicked.connect(lambda: self.move_pagination('right'))
+        self.pagination_prev_btn.clicked.connect(lambda: self.move_pagination('left'))
 
         # Создание дополнительных переменных
         self.resize_btn = QSizeGrip(self.size_grip)
@@ -38,16 +41,35 @@ class MainWindow(QMainWindow, ui_main_window.Ui_main_window):
         self.ex_search_was_input = None
         self.can_ex_search = False
         self.full_screen = 0
+        self.pagination_cursor = 0
+        self.rows_on_page = 30
+        self.loaded_rows = []
         self.error_label.setText('')
+        self.pagination_label.setText('0/0')
+
+    def move_pagination(self, direction):
+        pages_count = ceil(len(self.loaded_rows) / self.rows_on_page) + 1
+        if direction == 'right':
+            if self.pagination_cursor != pages_count:
+                self.pagination_cursor = (self.pagination_cursor + 1) % pages_count
+                self.add_book_cards()
+        elif direction == 'left':
+            if self.pagination_cursor != 1:
+                self.pagination_cursor = (self.pagination_cursor - 1) % pages_count
+                self.add_book_cards()
 
     def clear_scroll(self):
         for i in reversed(range(self.scroll_layout.count())):
             self.scroll_layout.itemAt(i).widget().setParent(None)
 
-    def add_book_cards(self, headings, data):
+    def add_book_cards(self):
         self.clear_scroll()
-        db = pd.DataFrame(data, columns=headings)
-        print(db.shape[0])
+        headings = ['title', 'publishing', 'year', 'pages', 'book_type', 'lvl_education', 'author', 'discipline',
+                    'isbn', 'bbk', 'ydk', 'bibl_record', 'annotation', 'link']
+        db = pd.DataFrame(
+            self.loaded_rows[self.rows_on_page*(self.pagination_cursor - 1):self.rows_on_page * self.pagination_cursor],
+            columns=headings)
+        self.pagination_label.setText(f'{self.pagination_cursor}/{ceil(len(self.loaded_rows) / self.rows_on_page)}')
         for row in range(db.shape[0]):
             book_card = BookCard(db.loc[row])
             book_card.open_book_window.connect(self.open_book_window)
@@ -57,11 +79,12 @@ class MainWindow(QMainWindow, ui_main_window.Ui_main_window):
         if self.search_input.text().strip() != '':
             search_text = self.search_input.text()
             db = pd.read_csv("Data_bases/test.csv", sep='|', dtype={'pages': 'str'})
-            headings = list(db.columns)
             db = db.to_numpy()
-            db = [row for row in db if search_text.lower() in row[13].lower()
-                  or search_text.lower() in row[0].lower()]
-            self.add_book_cards(headings, db)
+            self.loaded_rows = [row for row in db if search_text.lower() in row[13].lower()
+                                or search_text.lower() in row[0].lower()]
+            self.error_label.setText(f'Было найдено {len(self.loaded_rows)} книг')
+            self.pagination_cursor = 1 if ceil(len(self.loaded_rows) / self.rows_on_page) else 0
+            self.add_book_cards()
 
     @Slot(pd.Series)
     def open_book_window(self, data: pd.Series):
@@ -103,54 +126,53 @@ class MainWindow(QMainWindow, ui_main_window.Ui_main_window):
     def ex_search(self):
         if self.can_ex_search:
             db = pd.read_csv("Data_bases/test.csv", sep='|', dtype={'pages': 'str'})
-            headings = list(db.columns)
             db = db.to_numpy()
             was_input = self.ex_search_was_input
             inputs = self.ex_search_params
             if sum(was_input) == 0:
-                print('Ничего не введено')
                 return
-            print(was_input)
-            print(inputs)
             loaded_rows = []
             for row in db:
-                was_found = []
+                was_found = 0
                 if was_input[0]:
                     if was_input[1]:
                         if inputs[0] in row[0].lower():
-                            was_found.append(True)
+                            was_found += 1
                     if was_input[2]:
                         if inputs[0] in row[12].lower():
-                            was_found.append(True)
+                            was_found += 1
                     if was_input[0]:
-                        was_found.append(True)
+                        was_found += 1
                 if was_input[3]:
                     if inputs[3] == row[1]:
-                        was_found.append(True)
+                        was_found += 1
                 if was_input[4]:
                     if inputs[4] in str(row[6]):
-                        was_found.append(True)
+                        was_found += 1
                 if was_input[5]:
                     if str(inputs[5]) in str(row[2]):
-                        was_found.append(True)
+                        was_found += 1
                 if was_input[6]:
                     if inputs[6] == row[8]:
-                        was_found.append(True)
+                        was_found += 1
                 if was_input[7]:
                     if inputs[7] in row[10]:
-                        was_found.append(True)
+                        was_found += 1
                 if was_input[8]:
                     if inputs[8] in row[9]:
-                        was_found.append(True)
+                        was_found += 1
                 if was_input[9]:
                     if inputs[9] == row[4]:
-                        was_found.append(True)
+                        was_found += 1
                 if was_input[10]:
                     if inputs[10] in str(row[7]):
-                        was_found.append(True)
-                if sum(was_found) == sum(was_input):
+                        was_found += 1
+                if was_found == sum(was_input):
                     loaded_rows.append(row)
-            self.add_book_cards(headings, loaded_rows)
+            self.loaded_rows = loaded_rows
+            self.error_label.setText(f'Было найдено {len(self.loaded_rows)} книг')
+            self.pagination_cursor = 1 if ceil(len(self.loaded_rows) / self.rows_on_page) else 0
+            self.add_book_cards()
 
     def mousePressEvent(self, event: QMouseEvent):
         p = event.globalPosition()
