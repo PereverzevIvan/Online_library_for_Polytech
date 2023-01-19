@@ -71,7 +71,7 @@ class MainWindow(QMainWindow, ui_main_window.Ui_main_window):
             return
         # Производим сортировку в зависимости от значения ключа
         if sort_key == 'Году издания':
-            self.loaded_rows = sorted(self.loaded_rows, key=lambda x: max([int(i) for i in x[2].split(',')]))
+            self.loaded_rows = sorted(self.loaded_rows, key=lambda x: max([float(i) for i in str(x[2]).split(',')]))
         if sort_key == 'Алфавиту':
             self.loaded_rows = sorted(self.loaded_rows, key=lambda x: x[0])
         if sort_key == 'Номеру УДК':
