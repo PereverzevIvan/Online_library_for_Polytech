@@ -396,14 +396,14 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
             <property name="bottomMargin">
              <number>0</number>
             </property>
-            <item alignment="Qt::AlignLeft">
-             <widget class="QLabel" name="window_title">
-              <property name="text">
-               <string>Расширенный поиск</string>
-              </property>
-             </widget>
-            </item>
            </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="window_title">
+           <property name="text">
+            <string>Расширенный поиск</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -1247,6 +1247,12 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
             </item>
             <item>
              <widget class="QDialogButtonBox" name="buttons">
+              <property name="layoutDirection">
+               <enum>Qt::RightToLeft</enum>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -1293,7 +1299,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
  </widget>
  <resources>
   <include location="../resources.qrc"/>
-  <include location="C:/Users/Pereverzev Ivan Work/AppData/Roaming/Python/Python39/site-packages/qt5_applications/Qt/resources.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections>
   <connection>

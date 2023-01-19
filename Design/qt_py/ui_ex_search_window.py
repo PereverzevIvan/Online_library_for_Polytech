@@ -1,9 +1,9 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 ################################################################################
 ## Form generated from reading UI file 'ex_search_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.1
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -327,13 +327,13 @@ class Ui_ex_search_window(object):
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.window_title = QLabel(self.frame_6)
-        self.window_title.setObjectName(u"window_title")
-
-        self.verticalLayout_14.addWidget(self.window_title, 0, Qt.AlignLeft)
-
 
         self.horizontalLayout_6.addWidget(self.frame_6, 0, Qt.AlignLeft)
+
+        self.window_title = QLabel(self.title_bar)
+        self.window_title.setObjectName(u"window_title")
+
+        self.horizontalLayout_6.addWidget(self.window_title)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -704,6 +704,8 @@ class Ui_ex_search_window(object):
 
         self.buttons = QDialogButtonBox(self.inputs_area)
         self.buttons.setObjectName(u"buttons")
+        self.buttons.setLayoutDirection(Qt.RightToLeft)
+        self.buttons.setAutoFillBackground(False)
         self.buttons.setOrientation(Qt.Horizontal)
         self.buttons.setStandardButtons(QDialogButtonBox.Ok|QDialogButtonBox.Reset)
         self.buttons.setCenterButtons(True)

@@ -130,6 +130,11 @@ QComboBox {
 QComboBox:on {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+	border-left: 2px solid rgba(254,211,44,255);
+}
+
+QComboBox:focus {
+	border-left: 2px solid rgba(254,211,44,255);
 }
 
 QComboBox::drop-down {
@@ -137,8 +142,8 @@ QComboBox::drop-down {
     subcontrol-position: top right;
     width: 40px;
 	background-color: rgba(254,211,44,255);
-    border-top-right-radius: 10%;
-    border-bottom-right-radius: 10%;
+    border-top-right-radius: 6%;
+    border-bottom-right-radius: 6%;
 }
 
 QComboBox::drop-down:on {
@@ -543,7 +548,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
              <item>
               <widget class="QTabWidget" name="tab_menu">
                <property name="currentIndex">
-                <number>2</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="search_tab">
                 <attribute name="title">
@@ -909,7 +914,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                           <number>-1</number>
                          </property>
                          <property name="placeholderText">
-                          <string>Выберите параметр сортироваки</string>
+                          <string/>
                          </property>
                         </widget>
                        </item>
@@ -1108,7 +1113,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                   <x>0</x>
                   <y>0</y>
                   <width>683</width>
-                  <height>257</height>
+                  <height>255</height>
                  </rect>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_5">

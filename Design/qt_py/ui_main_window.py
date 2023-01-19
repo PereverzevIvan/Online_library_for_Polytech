@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.1
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -133,16 +133,21 @@ class Ui_main_window(object):
 "QComboBox:on {\n"
 "    border-bottom-left-radius: 0px;\n"
 "    border-bottom-right-radius: 0px;\n"
+"	border-left: 2px solid rgba(254,211,44,255);\n"
 "}\n"
 "\n"
+"QComboBox:focus {\n"
+"	border-left: 2px solid rgba(254,211,44,255);\n"
+"}\n"
+""
+                        "\n"
 "QComboBox::drop-down {\n"
 "    subcontrol-origin: padding;\n"
 "    subcontrol-position: top right;\n"
 "    width: 40px;\n"
-""
-                        "	background-color: rgba(254,211,44,255);\n"
-"    border-top-right-radius: 10%;\n"
-"    border-bottom-right-radius: 10%;\n"
+"	background-color: rgba(254,211,44,255);\n"
+"    border-top-right-radius: 6%;\n"
+"    border-bottom-right-radius: 6%;\n"
 "}\n"
 "\n"
 "QComboBox::drop-down:on {\n"
@@ -174,15 +179,15 @@ class Ui_main_window(object):
 "/* CheckBox style */\n"
 "QCheckBox {\n"
 "	color: white;\n"
-"	border-radius: 10%;\n"
+"	border-radius"
+                        ": 10%;\n"
 "}\n"
 "\n"
 "QCheckBox::indicator:unchecked {\n"
 "	image: url(:/Icons/For_QT/square.svg);\n"
 "}\n"
 "\n"
-"QCheckBox::in"
-                        "dicator:checked {\n"
+"QCheckBox::indicator:checked {\n"
 "	\n"
 "	image: url(:/Icons/For_QT/check-square.svg);\n"
 "}\n"
@@ -227,14 +232,14 @@ class Ui_main_window(object):
 "/* VERTICAL SCROLLBAR */\n"
 " QScrollBar:vertical {\n"
 "	border: none;\n"
-"	background-color: rgba(32,36,42,255);\n"
+"	background-color: "
+                        "rgba(32,36,42,255);\n"
 "    width: 20px;\n"
 "	border-radius: 0px;\n"
 " }\n"
 "\n"
 "/*  HANDLE BAR VERTICAL */\n"
-"QScrollBar::ha"
-                        "ndle:vertical {	\n"
+"QScrollBar::handle:vertical {	\n"
 "	background-color: rgb(76,79,86);\n"
 "	min-height: 20px;\n"
 "	margin: 20px 0 20px 0;\n"
@@ -267,13 +272,13 @@ class Ui_main_window(object):
 "	subcontrol-position: bottom;\n"
 "	subcontrol-origin: margin;\n"
 "}\n"
-"QScrollBar::add-line:vertical:hover {	\n"
+"QScrollBar::add-line:vertic"
+                        "al:hover {	\n"
 "	background: rgba(204,161, 44,255);\n"
 "}\n"
 "\n"
 "/* RESET ARROW */\n"
-"QScrollBar::up-arrow:vertical, QScroll"
-                        "Bar::down-arrow:vertical {\n"
+"QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
 "	background: none;\n"
 "}\n"
 "QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
@@ -670,7 +675,7 @@ class Ui_main_window(object):
         self.scroll_area.setWidgetResizable(True)
         self.scroll_area_container = QWidget()
         self.scroll_area_container.setObjectName(u"scroll_area_container")
-        self.scroll_area_container.setGeometry(QRect(0, 0, 683, 257))
+        self.scroll_area_container.setGeometry(QRect(0, 0, 683, 255))
         self.verticalLayout_5 = QVBoxLayout(self.scroll_area_container)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -720,7 +725,7 @@ class Ui_main_window(object):
 
         self.retranslateUi(main_window)
 
-        self.tab_menu.setCurrentIndex(2)
+        self.tab_menu.setCurrentIndex(0)
         self.sort_params.setCurrentIndex(-1)
 
 
@@ -748,7 +753,7 @@ class Ui_main_window(object):
         self.tab_menu.setTabText(self.tab_menu.indexOf(self.ex_search_tab), QCoreApplication.translate("main_window", u"\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043d\u043d\u044b\u0439 \u043f\u043e\u0438\u0441\u043a", None))
         self.label_6.setText(QCoreApplication.translate("main_window", u"\u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043f\u043e:", None))
         self.sort_params.setCurrentText("")
-        self.sort_params.setPlaceholderText(QCoreApplication.translate("main_window", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440 \u0441\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u043a\u0438", None))
+        self.sort_params.setPlaceholderText("")
         self.checkBox.setText(QCoreApplication.translate("main_window", u"\u041f\u043e \u0443\u0431\u044b\u0432\u0430\u043d\u0438\u044e", None))
         self.sort_btn.setText(QCoreApplication.translate("main_window", u" \u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
         self.tab_menu.setTabText(self.tab_menu.indexOf(self.sort_tab), QCoreApplication.translate("main_window", u"\u0421\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u043a\u0430", None))
